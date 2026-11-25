@@ -33,7 +33,7 @@ html[data-fw="500"] body :is(p,li,address,small,span,em,dd,dt,td,th,label,figcap
 html[data-fw="700"] body :is(p,li,address,small,span,em,dd,dt,td,th,label,figcaption,input,.exh-desc){font-weight:700}
 html[data-fw="700"] body :is(h1,h2,h3,h4,h5,b,strong,.sec-title,.gnb a){font-weight:900}
 body > section, body > main, body > footer{zoom:var(--fz,1)}
-.hero{height:calc(100vh / var(--fz,1))}
+#top.hero{height:calc(100vh / var(--fz,1))}
 
 /* ---------- 화면 설정 버튼 (비트윈즈 마스코트 위에 고정) ---------- */
 .set-fab{position:fixed;z-index:91;right:23px;bottom:181px;width:64px;height:64px;border-radius:50%;
@@ -161,3 +161,46 @@ html[data-mode="k-lg"] .quick li{border-bottom:1px solid var(--mi-07);border-lef
 html[data-mode="k-lg"] .quick li:last-child{border-right-color:var(--mi-05)}
 html[data-mode="dg-g"] .quick li{border-bottom:1px solid var(--mi-07);border-left-color:var(--mi-06)}
 html[data-mode="dg-g"] .quick li:last-child{border-right-color:var(--mi-06)}
+
+/* ==========================================================================
+   전시 페이지(현재·예정·지난 전시): 화면 설정 색상 조합 적용
+   고정 회색 글자/흰 글자는 조합별 색으로, 강조색 바탕 위 글자는 대비색으로 바꿉니다.
+   ========================================================================== */
+html[data-mode] :is(.tabs,.page-head,.page,.panel,.tools,.cal-bar,.months,.grid,.filters){background:transparent}
+html[data-mode] .tabs{background:var(--body-bg)}
+html[data-mode] :is(.card p,.card .meta,.card .meta span,.row p,.crumb,.crumb span,.tools .count,.tools .count b,.badge,.dt-body .desc,.dt-body p,.desc-note,.sec-sub,.au-name,.au-name small,.views){color:var(--text)}
+html[data-mode] :is(.card .kind.end,.dt-line,.dt-line span){color:var(--muted)}
+html[data-mode] .tabs button{color:var(--muted)}
+html[data-mode] .tabs button:hover{color:var(--ink)}
+html[data-mode] .tabs button[aria-selected="true"]{color:var(--ink)}
+html[data-mode] .tabs button::after{background:var(--green)}
+html[data-mode] :is(.months button,.months li button){color:var(--muted)}
+html[data-mode] :is(.years button,.cal-all,.filters button){color:var(--text);border-color:var(--line);background:transparent}
+html[data-mode] :is(.years button,.cal-all,.filters button):hover{border-color:var(--ink);color:var(--ink)}
+html[data-mode] :is(.filters button[aria-pressed="true"],.years button[aria-pressed="true"],.cal-all[aria-pressed="true"]){background:var(--green);border-color:var(--green);color:var(--on-accent)}
+html[data-mode] :is(.card .dday,.au-no,.news button,.back,.share-msg){background:var(--green);color:var(--on-accent)}
+html[data-mode] .months li.on{background:var(--green)}
+html[data-mode] .months li.on button{color:var(--on-accent)}
+html[data-mode] .months li.on button::after{background:var(--on-accent)}
+html[data-mode] .months li.has button:hover{background:var(--bg-soft)}
+html[data-mode] .card .audio-ico,html[data-mode] .card .card-icos .audio-ico{background:var(--bg-soft);color:var(--ink);border-color:var(--line)}
+html[data-mode] .card:hover .audio-ico{background:var(--green);color:var(--on-accent);border-color:var(--green)}
+html[data-mode] .card .audio-ico b{color:inherit}
+html[data-mode] :is(.card,.au-card,.au-script,.share-pop,.desc-note){background:var(--surface);border-color:var(--line);color:var(--text)}
+html[data-mode] .au-script i{background:var(--bg-soft);color:var(--ink)}
+html[data-mode] :is(.card h3,.card h4,.card .ttl,.au-card h3,.row h3,.dt-head h2,.dt-head h1,h2,h3){color:var(--ink)}
+html[data-mode] .search input{background:transparent;color:var(--ink);border-color:var(--line)}
+html[data-mode] .search input::placeholder{color:var(--muted)}
+html[data-mode] :is(.vbtn,.pager a){color:var(--text);border-color:var(--line)}
+html[data-mode] :is(.vbtn[aria-pressed="true"],.pager a[aria-current="page"]){color:var(--ink);border-color:var(--green)}
+html[data-mode] :is(.kicker,.row .num,.au-kicker,.outline-grid li b){color:var(--green)}
+html[data-mode] footer :is(h5,li,a){color:var(--text)}
+html[data-mode] footer h5{color:var(--ink)}
+html[data-mode] .copyright{background:var(--surface);color:var(--muted)}
+/* 밝은 조합에서 초록 바탕(선록) 위 글자는 검정 계열, 어두운 조합에서 네온 바탕 위 글자도 검정 */
+html[data-mode] :is(.card .dday,.au-no,.news button,.filters button[aria-pressed="true"],.years button[aria-pressed="true"],.cal-all[aria-pressed="true"]){color:var(--on-accent)}
+html[data-mode="w-g"] :is(.kicker,.row .num,.au-kicker,.outline-grid li b){color:var(--ink)}
+/* 전시 상세 */
+html[data-mode] .dt-body .desc.desc-note{background:var(--surface);color:var(--text)}
+html[data-mode] .dt-body :is(li span,dt,dd,.dt-line p,.dt-line span){color:var(--text)}
+html[data-mode] .dt-body :is(dt){color:var(--muted)}
