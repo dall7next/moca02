@@ -133,3 +133,9 @@ html[data-mode] .hero{color:#fff}
 html[data-mode] :is(.hero-copy,.hero-tag,.hero-ctrl) :is(h1,p,span,b,.kicker){color:#fff!important}
 html[data-mode] .quick span{color:var(--text)}
 html[data-mode] .quick b{color:var(--green)}
+
+/* 밝은 배경 조합(백+진회, 백+선록~그린): 스크롤해서 상단 메뉴가 흰 바탕이 되면 글자·로고·메뉴 버튼을 진회색으로 */
+html:is([data-mode="w-dg"],[data-mode="w-g"]) header.fixed :is(.logo,.gnb a,.gnb-sub a,.util .lang,.util a){color:var(--ink)}
+html:is([data-mode="w-dg"],[data-mode="w-g"]) header.fixed .burger i{background:var(--ink)}
+html:is([data-mode="w-dg"],[data-mode="w-g"]) header.fixed .logo img{filter:brightness(0)}
+html:is([data-mode="w-dg"],[data-mode="w-g"]) header.fixed{box-shadow:0 1px 0 var(--line)}
