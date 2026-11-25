@@ -204,3 +204,5 @@ html[data-mode="w-g"] :is(.kicker,.row .num,.au-kicker,.outline-grid li b){color
 html[data-mode] .dt-body .desc.desc-note{background:var(--surface);color:var(--text)}
 html[data-mode] .dt-body :is(li span,dt,dd,.dt-line p,.dt-line span){color:var(--text)}
 html[data-mode] .dt-body :is(dt){color:var(--muted)}
+/* 전시 카드: 회색 바탕 없이 페이지 바탕색 그대로 */
+html[data-mode] :is(.card,.row){background:transparent}
