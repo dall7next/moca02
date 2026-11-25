@@ -418,8 +418,8 @@
   });
 </script>
 </style>
-<link rel="stylesheet" href="moca-common.css?v=12">
-<script src="moca-common.js?v=12" defer></script>
+<link rel="stylesheet" href="moca-common.css?v=13">
+<script src="moca-common.js?v=13" defer></script>
 </head>
 <body>
 
@@ -885,6 +885,15 @@
 
 
 <script>
+  // 상단 메뉴: 전시 메뉴와 외부 예약 링크를 제외한 메뉴는 아직 연결 페이지가 없어 클릭해도 이동하지 않음
+  document.querySelector(".gnb").addEventListener("click", e => {
+    const a = e.target.closest("a");
+    if (!a) return;
+    const h = a.getAttribute("href") || "";
+    if (h.indexOf("exhibition.html") === 0 || a.target === "_blank") return;
+    e.preventDefault();
+  });
+
   // header: fixed on scroll
   const hd = document.getElementById('hd');
   const hero = document.querySelector('.hero');

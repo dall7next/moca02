@@ -25,8 +25,8 @@
   ];
   var LINKS = [
     { t: '현재 전시', h: 'exhibition.html#current' },
-    { t: '프로그램',  h: 'index.html#events' },
-    { t: '공지사항',  h: 'index.html#notice' },
+    { t: '프로그램',  h: 'index.html#events', nolink: 1 },
+    { t: '공지사항',  h: 'index.html#notice', nolink: 1 },
     { t: '관람 안내', h: 'index.html#visit' },
     { t: '소장품',    h: 'index.html#collection' },
     { t: '뮤지엄숍',  h: 'index.html#store' }
@@ -51,7 +51,9 @@
     var qn = document.createElement('nav');
     qn.className = 'side-quick';
     qn.setAttribute('aria-label', '자주 찾는 페이지');
-    qn.innerHTML = QUICK.map(function (l) { return '<a href="' + l.h + '">' + l.t + '</a>'; }).join('');
+    qn.innerHTML = QUICK.map(function (l) { return '<a href="' + (l.nolink ? '#' : l.h) + '"' + (l.nolink ? ' data-nolink="1"' : '') + '>' + l.t + '</a>'; }).join('');
+    /* 아직 연결 페이지가 없는 바로가기는 클릭해도 이동하지 않음 */
+    qn.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[data-nolink]'); if (a) e.preventDefault(); });
     body.appendChild(qn);
 
     var p = document.createElement('aside');
