@@ -313,6 +313,10 @@
   #together{position:relative}
   #together::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(1160px,calc(100% - 80px));height:1px;background:#cfcfcf}
   html[data-mode] #together::before{background:var(--line)}
+  /* 구분선이 프로그램 카드 아래와 참여 사진 위의 정가운데에 오도록 여백 조정 (위 148px / 아래 92px + 제목 영역 56px) */
+  #events{padding-bottom:148px}
+  #together{padding-top:92px}
+  @media (max-width:680px){#events{padding-bottom:108px}#together{padding-top:52px}}
   /* ---------- reveal ---------- */
   .rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
   .rv.in{opacity:1;transform:none}
@@ -438,8 +442,8 @@
   });
 </script>
 </style>
-<link rel="stylesheet" href="moca-common.css?v=53">
-<script src="moca-common.js?v=53" defer></script>
+<link rel="stylesheet" href="moca-common.css?v=54">
+<script src="moca-common.js?v=54" defer></script>
 </head>
 <body>
 
