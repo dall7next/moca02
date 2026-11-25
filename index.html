@@ -309,6 +309,10 @@
   .ft-logo img{width:auto;height:64px;max-width:100%;object-fit:contain}
   .copy{background:var(--dark);color:#888;font-size:11px;text-align:center;padding:16px 0;margin-top:60px;font-family:'Montserrat',sans-serif}
 
+  /* 프로그램 섹션과 참여 섹션 사이 회색 1px 구분선 */
+  #together{position:relative}
+  #together::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(1160px,calc(100% - 80px));height:1px;background:#cfcfcf}
+  html[data-mode] #together::before{background:var(--line)}
   /* ---------- reveal ---------- */
   .rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
   .rv.in{opacity:1;transform:none}
@@ -434,8 +438,8 @@
   });
 </script>
 </style>
-<link rel="stylesheet" href="moca-common.css?v=52">
-<script src="moca-common.js?v=52" defer></script>
+<link rel="stylesheet" href="moca-common.css?v=53">
+<script src="moca-common.js?v=53" defer></script>
 </head>
 <body>
 
