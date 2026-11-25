@@ -54,7 +54,7 @@
     var qn = document.createElement('nav');
     qn.className = 'side-quick';
     qn.setAttribute('aria-label', '자주 찾는 페이지');
-    qn.innerHTML = QUICK.map(function (l) { return '<a href="' + (l.nolink ? '#' : l.h) + '"' + (l.nolink ? ' data-nolink="1"' : '') + '>' + l.t + '</a>'; }).join('');
+    qn.innerHTML = '<button type="button" class="sq-all" id="sqAll" aria-label="전체메뉴 열기">전체보기</button>' + QUICK.map(function (l) { return '<a href="' + (l.nolink ? '#' : l.h) + '"' + (l.nolink ? ' data-nolink="1"' : '') + '>' + l.t + '</a>'; }).join('');
     /* 아직 연결 페이지가 없는 바로가기는 클릭해도 이동하지 않음 */
     qn.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[data-nolink]'); if (a) e.preventDefault(); });
     body.appendChild(qn);
@@ -78,8 +78,52 @@
       LINKS.map(function (l) { return l.nolink ? '<span aria-disabled="true">' + l.t + '</span>' : '<a href="' + l.h + '">' + l.t + '</a>'; }).join('') + '</div></div>' +
       '<button class="set-reset" id="setReset" type="button">설정 초기화</button>';
     body.appendChild(p);
+    buildSitemap(body);
+    document.getElementById('sqAll').onclick = function () { window.mocaSitemap(true); };
   }
 
+  /* 전체메뉴(사이트맵): 주 메뉴 아래 하위 메뉴를 모두 보여줌. 페이지가 없는 메뉴는 이동하지 않음 */
+  var RESERVE = 'https://reserve.busan.go.kr/applcnt/searchProgrm?siteNo=&searchGubun=ALL&searchText=%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80';
+  var SITEMAP = [
+    { t: '관람·예약 안내', s: [{ t: '관람 안내' }, { t: '온라인 예약', h: RESERVE, ext: 1 }, { t: '오시는 길' }, { t: '공간 & 편의시설' }] },
+    { t: '전시', h: 'exhibition.html', s: [{ t: '현재 전시', h: 'exhibition.html#current' }, { t: '예정 전시', h: 'exhibition.html#upcoming' }, { t: '지난 전시', h: 'exhibition.html#past' }] },
+    { t: '프로그램', s: [{ t: '교육' }, { t: '문화행사' }, { t: '도슨트' }] },
+    { t: '소장품', s: [] },
+    { t: '도서·아카이브', s: [{ t: '모카이브' }, { t: '책그림섬' }, { t: '출판' }] },
+    { t: '소식', s: [{ t: '공지사항' }, { t: '보도자료' }] },
+    { t: '뮤지엄숍', s: [] },
+    { t: '미술관 소개', s: [{ t: '인사말' }, { t: '연혁' }, { t: 'M.I(상징 체계)' }, { t: '층별안내' }, { t: '조직 및 운영' }] }
+  ];
+  function smLink(l) {
+    if (l.h) return '<a href="' + l.h.replace(/&/g, '&amp;') + '"' + (l.ext ? ' target="_blank" rel="noopener" title="새 창: 부산시 통합예약시스템"' : '') + '>' + l.t + '</a>';
+    return '<a href="#" data-nolink="1">' + l.t + '</a>';
+  }
+  function buildSitemap(body) {
+    var dim = document.createElement('div');
+    dim.className = 'sitemap-dim'; dim.id = 'sitemapDim';
+    var sm = document.createElement('aside');
+    sm.className = 'sitemap'; sm.id = 'sitemap';
+    sm.setAttribute('role', 'dialog'); sm.setAttribute('aria-label', '전체메뉴'); sm.setAttribute('aria-hidden', 'true');
+    sm.innerHTML =
+      '<div class="sm-head"><h2>전체메뉴</h2><button class="sm-close" id="sitemapClose" type="button" aria-label="전체메뉴 닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>' +
+      '<div class="sm-grid">' + SITEMAP.map(function (m) {
+        return '<div class="sm-col"><h3>' + smLink({ t: m.t, h: m.h }) + '</h3>' +
+          (m.s.length ? '<ul>' + m.s.map(function (s) { return '<li>' + smLink(s) + '</li>'; }).join('') + '</ul>' : '') + '</div>';
+      }).join('') + '</div>';
+    body.appendChild(dim); body.appendChild(sm);
+    function open(o) {
+      sm.classList.toggle('open', o); dim.classList.toggle('open', o);
+      sm.setAttribute('aria-hidden', String(!o));
+      document.documentElement.style.overflow = o ? 'hidden' : '';
+      if (o) document.getElementById('sitemapClose').focus({ preventScroll: true });
+    }
+    window.mocaSitemap = open;
+    document.getElementById('sitemapClose').onclick = function () { open(false); };
+    dim.onclick = function () { open(false); };
+    sm.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a'); if (!a) return; if (a.dataset.nolink) e.preventDefault(); else if (!a.target) open(false); });
+    addEventListener('keydown', function (e) { if (e.key === 'Escape' && sm.classList.contains('open')) open(false); });
+    [].forEach.call(document.querySelectorAll('.burger'), function (b) { b.addEventListener('click', function () { open(true); }); });
+  }
   function init() {
     build();
     var setBtn = document.getElementById('setBtn');
