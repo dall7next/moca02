@@ -282,6 +282,7 @@
   .sns{display:flex;gap:16px;margin:26px 0}
   .sns a{width:20px;height:20px;color:#777}
   .sns a:hover{color:var(--ink)}
+  .ft > div:last-child .sns{margin-top:0}
   .ft-links{display:grid;grid-template-columns:repeat(2,max-content);gap:6px 60px;font-size:12px;color:#888}
   .ft-links a:hover{color:var(--ink)}
   .news h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:12px}
@@ -418,8 +419,8 @@
   });
 </script>
 </style>
-<link rel="stylesheet" href="moca-common.css?v=38">
-<script src="moca-common.js?v=38" defer></script>
+<link rel="stylesheet" href="moca-common.css?v=39">
+<script src="moca-common.js?v=39" defer></script>
 </head>
 <body>
 
@@ -809,6 +810,8 @@
         1월 1일, 매주 월요일 휴관
         <a href="#" class="mail en">info@moca.example</a>
       </address>
+    </div>
+    <div>
       <div class="sns">
         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg></a>
         <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.8L4.3 21H1l7.7-8.8L.6 3h6.8l4.7 6.2L17.5 3zm-1.2 16h1.8L6.5 4.9H4.6L16.3 19z"/></svg></a>
@@ -819,13 +822,6 @@
         <a href="#">개인정보처리방침</a><a href="#">저작권 보호정책</a>
         <a href="#">이메일 무단수집 거부안내</a><a href="#">미술관 SNS 소개 안내</a>
       </div>
-    </div>
-    <div>
-      <form class="news" onsubmit="event.preventDefault();this.querySelector('button').textContent='메시지 전송 완료';">
-        <h4 class="en">Newsletter</h4>
-        <input type="email" placeholder="이메일 주소를 입력하세요" required>
-        <button type="submit">메시지 보내기</button>
-      </form>
       <div class="ft-logo">
         <img src="images/logo-footer.svg" alt="부산현대미술관 Busan Museum of Contemporary Art">
       </div>
