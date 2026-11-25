@@ -139,3 +139,8 @@ html:is([data-mode="w-dg"],[data-mode="w-g"]) header.fixed :is(.logo,.gnb a,.gnb
 html:is([data-mode="w-dg"],[data-mode="w-g"]) header.fixed .burger i{background:var(--ink)}
 html:is([data-mode="w-dg"],[data-mode="w-g"]) header.fixed .logo img{filter:brightness(0)}
 html:is([data-mode="w-dg"],[data-mode="w-g"]) header.fixed{box-shadow:0 1px 0 var(--line)}
+
+/* 밝은 배경 조합: 배너 하단 3개 메뉴(관람 안내·온라인 예약·오시는 길) 구분선을 진회색으로 */
+html:is([data-mode="w-dg"],[data-mode="w-g"]) .quick li{border-left-color:var(--mi-03)}
+html:is([data-mode="w-dg"],[data-mode="w-g"]) .quick li:last-child{border-right-color:var(--mi-03)}
+html:is([data-mode="w-dg"],[data-mode="w-g"]) .quick{border-bottom:1px solid var(--mi-03)}
