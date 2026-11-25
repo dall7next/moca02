@@ -320,14 +320,16 @@
   #events{padding-bottom:148px}
   #together{padding-top:92px}
   @media (max-width:680px){#events{padding-bottom:108px}#together{padding-top:52px}}
-  /* 참여 섹션: 녹색 원 패턴 (M.I. 원 형상) */
   #together{overflow:hidden}
   #together .wrap{position:relative;z-index:1}
-  .dots{position:absolute;inset:0;z-index:0;pointer-events:none}
-  .dots span{position:absolute;border-radius:50%;background:var(--green);animation:dotFloat 7s ease-in-out infinite alternate}
-  @keyframes dotFloat{from{transform:translateY(-8px)}to{transform:translateY(10px)}}
-  @media (max-width:680px){.dots span{transform:scale(.6)}}
-  @media (prefers-reduced-motion:reduce){.dots span{animation:none}}  /* ---------- reveal ---------- */
+  /* 참여 섹션: 사진 주변 녹색 원 패턴 — 기준 시안과 같은 위치·같은 크기(사진 너비의 1.7%) */
+  #together{overflow:hidden}
+  #together .tg-main .img{position:relative;z-index:1}
+  #together .figcap,#together .tg-sub{position:relative;z-index:1}
+  .tg-dots{position:absolute;left:0;top:0;width:100%;aspect-ratio:16/8.4;z-index:0;pointer-events:none}
+  .tg-dots span{position:absolute;width:1.7%;aspect-ratio:1;border-radius:50%;background:var(--green);transform:translate(-50%,-50%)}
+  @media (max-width:680px){.tg-dots span{width:2.6%}}
+  /* ---------- reveal ---------- */
   .rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
   .rv.in{opacity:1;transform:none}
 
@@ -452,8 +454,8 @@
   });
 </script>
 </style>
-<link rel="stylesheet" href="moca-common.css?v=56">
-<script src="moca-common.js?v=56" defer></script>
+<link rel="stylesheet" href="moca-common.css?v=58">
+<script src="moca-common.js?v=58" defer></script>
 </head>
 <body>
 
@@ -781,28 +783,26 @@
 
 <!-- ===================== TOGETHER ===================== -->
 <section class="sec" id="together">
-  <div class="dots" aria-hidden="true">
-      <span style="left:12%;top:22px;width:22px;height:22px;animation-delay:-0s"></span>
-      <span style="left:30%;top:74px;width:16px;height:16px;animation-delay:-1.2s"></span>
-      <span style="left:51%;top:36px;width:26px;height:26px;animation-delay:-0.6s"></span>
-      <span style="left:71%;top:92px;width:18px;height:18px;animation-delay:-2.1s"></span>
-      <span style="left:88%;top:28px;width:28px;height:28px;animation-delay:-1.6s"></span>
-      <span style="left:96%;top:118px;width:14px;height:14px;animation-delay:-0.3s"></span>
-      <span style="left:1.5%;top:300px;width:24px;height:24px;animation-delay:-1.1s"></span>
-      <span style="left:97.5%;top:380px;width:20px;height:20px;animation-delay:-2.4s"></span>
-      <span style="left:1%;top:560px;width:16px;height:16px;animation-delay:-0.8s"></span>
-      <span style="left:98%;top:700px;width:26px;height:26px;animation-delay:-1.9s"></span>
-      <span style="left:18%;top:calc(100% - 80px);width:20px;height:20px;animation-delay:-0.5s"></span>
-      <span style="left:46%;top:calc(100% - 44px);width:28px;height:28px;animation-delay:-1.4s"></span>
-      <span style="left:66%;top:calc(100% - 96px);width:16px;height:16px;animation-delay:-2.2s"></span>
-      <span style="left:84%;top:calc(100% - 52px);width:24px;height:24px;animation-delay:-0.9s"></span>
-      <span style="left:4%;top:calc(100% - 150px);width:14px;height:14px;animation-delay:-1.7s"></span>
-  </div>
   <div class="wrap">
     <div class="sec-head rv">
       <a href="#" class="more-btn">참여 더보기</a>
     </div>
     <div class="tg-main rv">
+      <div class="tg-dots" aria-hidden="true">
+        <span style="left:69.3%;top:-12.8%"></span>
+        <span style="left:40.7%;top:-5.7%"></span>
+        <span style="left:79.2%;top:-5.7%"></span>
+        <span style="left:-2.5%;top:25%"></span>
+        <span style="left:-0.7%;top:70.4%"></span>
+        <span style="left:-3.6%;top:72%"></span>
+        <span style="left:-2%;top:89.8%"></span>
+        <span style="left:14.9%;top:105.4%"></span>
+        <span style="left:39.1%;top:107.2%"></span>
+        <span style="left:33%;top:112%"></span>
+        <span style="left:52.5%;top:113.7%"></span>
+        <span style="left:78.3%;top:122.4%"></span>
+        <span style="left:95.7%;top:125.2%"></span>
+      </div>
       <div class="img ph"><img src="images/together-main.jpg" alt="전시 현수막이 걸린 부산현대미술관 외관"></div>
       <div class="figcap"><span>미술관 소개</span><b>|</b><span>문화행사 · 체험프로그램 참여</span></div>
     </div>
