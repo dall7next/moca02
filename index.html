@@ -273,6 +273,20 @@
   .notice-box li em{font-style:normal;margin-left:auto;color:#aaa;font-size:11.5px;flex:none}
   .notice-box .more-btn{margin-top:24px}
 
+  .notice .wrap{gap:24px}
+  .notice-box{display:flex;flex-direction:column;min-height:430px}
+  .notice-box .more-btn{margin-top:auto;align-self:flex-start}
+  .notice-box ul{margin-bottom:24px}
+  .notice-box.info{margin-left:auto}
+  .notice-box.info li{display:grid;grid-template-columns:78px 1fr;gap:10px;line-height:1.55}
+  .notice-box.info li::before{display:none}
+  .notice-box.info li b{color:var(--ink);font-weight:700}
+  .notice-box.info li span{color:#555}
+  @media (max-width:1024px){
+    .notice{height:auto;padding:60px 0}
+    .notice .wrap{flex-direction:column;align-items:flex-start;justify-content:center}
+    .notice-box.info{margin-left:0}
+  }
   /* ---------- footer ---------- */
   footer{background:#fff;border-top:1px solid var(--line);padding:70px 0 0}
   .ft{display:grid;grid-template-columns:1.3fr 1fr;gap:60px}
@@ -420,8 +434,8 @@
   });
 </script>
 </style>
-<link rel="stylesheet" href="moca-common.css?v=42">
-<script src="moca-common.js?v=42" defer></script>
+<link rel="stylesheet" href="moca-common.css?v=44">
+<script src="moca-common.js?v=44" defer></script>
 </head>
 <body>
 
@@ -732,6 +746,17 @@
         <li>뮤지엄 스토어 리뉴얼 오픈 안내 <em>09.27</em></li>
       </ul>
       <a href="#" class="more-btn">공지 더보기</a>
+    </div>
+    <div class="notice-box info rv">
+      <h3>관람 안내</h3>
+      <ul>
+        <li><b>관람 시간</b><span>화–일 10:00–18:00 (전시 종료 30분 전 입장 마감)</span></li>
+        <li><b>휴관일</b><span>월요일, 1월 1일</span></li>
+        <li><b>관람 요금</b><span>무료 (기획전·특별전 등 일부 전시 제외)</span></li>
+        <li><b>오시는 길</b><span>지하철 1호선 하단역 3번 출구</span></li>
+        <li><b>주차</b><span>매일 09:00–19:00 · 10분당 100원 (1일 최대 2,400원)</span></li>
+      </ul>
+      <a href="https://reserve.busan.go.kr/applcnt/searchProgrm?siteNo=&amp;searchGubun=ALL&amp;searchText=%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80" target="_blank" rel="noopener" class="more-btn" title="새 창: 부산시 통합예약시스템">온라인 예약</a>
     </div>
   </div>
 </section>
