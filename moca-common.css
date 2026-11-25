@@ -130,5 +130,6 @@ html[data-mode] .side-quick,html[data-mode] .set-fab{border-color:var(--green)}
 html[data-mode] .side-quick a:hover{background:var(--green);color:var(--on-accent)}
 html[data-mode] .set-fab{background:var(--body-bg);color:var(--ink)}
 html[data-mode] .hero{color:#fff}
-html[data-mode] .hero :is(h1,p,span,b){color:#fff}
+html[data-mode] :is(.hero-copy,.hero-tag,.hero-ctrl) :is(h1,p,span,b,.kicker){color:#fff!important}
+html[data-mode] .quick span{color:var(--text)}
 html[data-mode] .quick b{color:var(--green)}
