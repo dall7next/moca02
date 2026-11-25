@@ -278,6 +278,9 @@
   .notice-box .more-btn{margin-top:auto;align-self:flex-start}
   .notice-box ul{margin-bottom:24px}
   .notice-box.info{margin-left:auto}
+  /* 공지·관람 안내 배경: 위·아래 검정 그라데이션으로 살짝 어둡게 */
+  .notice::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.18) 28%,rgba(0,0,0,0) 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.18) 72%,rgba(0,0,0,.5) 100%)}
+  .notice .wrap{z-index:1}
   .notice-box.info li{display:grid;grid-template-columns:78px 1fr;gap:10px;line-height:1.55}
   .notice-box.info li::before{display:none}
   .notice-box.info li b{color:var(--ink);font-weight:700}
@@ -442,8 +445,8 @@
   });
 </script>
 </style>
-<link rel="stylesheet" href="moca-common.css?v=54">
-<script src="moca-common.js?v=54" defer></script>
+<link rel="stylesheet" href="moca-common.css?v=55">
+<script src="moca-common.js?v=55" defer></script>
 </head>
 <body>
 
