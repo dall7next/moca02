@@ -206,3 +206,21 @@ html[data-mode] .dt-body :is(li span,dt,dd,.dt-line p,.dt-line span){color:var(-
 html[data-mode] .dt-body :is(dt){color:var(--muted)}
 /* 전시 카드: 회색 바탕 없이 페이지 바탕색 그대로 */
 html[data-mode] :is(.card,.row){background:transparent!important}
+
+  /* ---------- AI character button ---------- */
+  .ai-btn{position:fixed;z-index:90;right:17px;bottom:102px;width:70px;height:64px;transition:transform .25s;filter:drop-shadow(0 0 1.5px rgba(255,255,255,.95)) drop-shadow(0 3px 8px rgba(0,0,0,.3))}
+  .ai-btn svg{display:block;width:100%;height:100%;overflow:visible}
+  .ai-btn:hover{transform:scale(1.08)}
+  .ai-btn:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+  .ai-arm{transform-origin:900px 770px;animation:aiWave 5s ease-in-out infinite}
+  .ai-eye{transform-box:fill-box;transform-origin:center;animation:aiBlink 4s linear infinite}
+  /* one short wave at the start of each 5s cycle, one blink at the end of each 4s cycle */
+  @keyframes aiWave{0%,28%,100%{transform:rotate(0)}6%{transform:rotate(-16deg)}12%{transform:rotate(14deg)}18%{transform:rotate(-16deg)}24%{transform:rotate(14deg)}}
+  @keyframes aiBlink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.08)}}
+  @media (prefers-reduced-motion:reduce){.ai-arm,.ai-eye{animation:none}}
+  /* below this width the slide controls reach the icon's column, so it sits above them */
+  @media (max-width:1480px){.ai-btn{bottom:134px}}
+
+@media (max-width:680px){
+    .ai-btn{right:27px;bottom:126px;width:53px;height:48px}
+}
