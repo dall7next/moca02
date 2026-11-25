@@ -262,7 +262,7 @@
   .store-arrows .arrow{pointer-events:auto}
 
   /* ---------- notice ---------- */
-  .notice{position:relative;height:500px;overflow:hidden;margin-top:120px}
+  .notice{position:relative;height:500px;overflow:hidden;margin-top:0}
   .notice > img{position:absolute;inset:0}
   .notice .wrap{position:relative;height:100%;display:flex;align-items:center}
   .notice-box{width:440px;background:rgba(255,255,255,.93);padding:40px 40px 34px;box-shadow:0 20px 50px rgba(0,0,0,.12)}
@@ -420,8 +420,8 @@
   });
 </script>
 </style>
-<link rel="stylesheet" href="moca-common.css?v=41">
-<script src="moca-common.js?v=41" defer></script>
+<link rel="stylesheet" href="moca-common.css?v=42">
+<script src="moca-common.js?v=42" defer></script>
 </head>
 <body>
 
@@ -718,15 +718,22 @@
   </div>
 </section>
 
-<!-- ===================== BLEED ===================== -->
-<section class="bleed ph" aria-roledescription="carousel" aria-label="부산현대미술관 전시장 풍경">
-  <img class="bl-img on" src="images/bleed-biennale.webp" alt="노란 불화 두 점과 나무 설치 작품이 놓인 부산현대미술관 1층 높은 전시장" data-cap="‘어둠에서 보기’를 주제로 한 2024 부산비엔날레가 열리는 부산현대미술관 1층 전시장" data-pos="50% 72%">
-  <img class="bl-img" src="images/bleed-postmodern-kids.webp" alt="나무 바닥 위 어린이 마네킹과 팝아트 벽화가 있는 전시장" data-cap="《포스트모던 어린이》, 2022–2023 · 나무 바닥과 흰 벽체, 팝아트적 전시 공간" data-pos="50% 62%" loading="lazy">
-  <img class="bl-img" src="images/bleed-ten-eyes.webp" alt="대형 기둥과 흰 벽, 오렌지색 전시대가 있는 넓은 전시장" data-cap="《열 개의 눈》, 2025 · 대형 기둥과 흰 벽, 오렌지색 전시대가 보이는 전시장" data-pos="50% 55%" loading="lazy">
-  <img class="bl-img" src="images/bleed-collecting-future.jpg" alt="흰 벽에 작은 사각 작품이 줄지어 걸리고 붉은 기둥 조각이 선 전시장" data-cap="《미래를 수집하기》 설치 전경 · 흰 전시 벽면과 조각이 놓인 넓은 전시 공간" data-pos="50% 50%" loading="lazy">
-  <img class="bl-img" src="images/bleed-rhino-unicorn.webp" alt="숲과 인물 실루엣을 그린 대형 흑백 벽화와 바닥에 기대 놓인 그림들" data-cap="《코뿔소와 유니콘》, 2026 · 대형 벽면 일러스트레이션을 활용한 전시장 내부" data-pos="50% 55%" loading="lazy">
-  <img class="bl-img" src="images/bleed-graybox.jpg" alt="검은 천장과 반사되는 바닥, 영상 화면들이 설치된 어두운 전시장" data-cap="《그레이박스 이후》, 2022 · 블랙 천장과 반사되는 바닥, 디지털 영상 설치 작품" data-pos="50% 58%" loading="lazy">
-  <div class="bleed-cap"><h3 aria-live="polite">‘어둠에서 보기’를 주제로 한 2024 부산비엔날레가 열리는 부산현대미술관 1층 전시장</h3></div>
+<!-- ===================== NOTICE ===================== -->
+<section class="notice" id="notice">
+  <img src="images/notice-bg.webp" alt="">
+  <div class="wrap">
+    <div class="notice-box rv">
+      <h3>Notice</h3>
+      <ul>
+        <li>2024 하반기 정기 휴관 안내 <em>10.24</em></li>
+        <li>11월 어린이 교육 프로그램 참가자 모집 <em>10.18</em></li>
+        <li>미술관 주차장 이용 시간 변경 안내 <em>10.11</em></li>
+        <li>도슨트 해설 운영 일정 안내 <em>10.04</em></li>
+        <li>뮤지엄 스토어 리뉴얼 오픈 안내 <em>09.27</em></li>
+      </ul>
+      <a href="#" class="more-btn">공지 더보기</a>
+    </div>
+  </div>
 </section>
 
 <!-- ===================== TOGETHER ===================== -->
@@ -782,22 +789,15 @@
   </div>
 </section>
 
-<!-- ===================== NOTICE ===================== -->
-<section class="notice" id="notice">
-  <img src="images/notice-bg.webp" alt="">
-  <div class="wrap">
-    <div class="notice-box rv">
-      <h3>Notice</h3>
-      <ul>
-        <li>2024 하반기 정기 휴관 안내 <em>10.24</em></li>
-        <li>11월 어린이 교육 프로그램 참가자 모집 <em>10.18</em></li>
-        <li>미술관 주차장 이용 시간 변경 안내 <em>10.11</em></li>
-        <li>도슨트 해설 운영 일정 안내 <em>10.04</em></li>
-        <li>뮤지엄 스토어 리뉴얼 오픈 안내 <em>09.27</em></li>
-      </ul>
-      <a href="#" class="more-btn">공지 더보기</a>
-    </div>
-  </div>
+<!-- ===================== BLEED ===================== -->
+<section class="bleed ph" aria-roledescription="carousel" aria-label="부산현대미술관 전시장 풍경">
+  <img class="bl-img on" src="images/bleed-biennale.webp" alt="노란 불화 두 점과 나무 설치 작품이 놓인 부산현대미술관 1층 높은 전시장" data-cap="‘어둠에서 보기’를 주제로 한 2024 부산비엔날레가 열리는 부산현대미술관 1층 전시장" data-pos="50% 72%">
+  <img class="bl-img" src="images/bleed-postmodern-kids.webp" alt="나무 바닥 위 어린이 마네킹과 팝아트 벽화가 있는 전시장" data-cap="《포스트모던 어린이》, 2022–2023 · 나무 바닥과 흰 벽체, 팝아트적 전시 공간" data-pos="50% 62%" loading="lazy">
+  <img class="bl-img" src="images/bleed-ten-eyes.webp" alt="대형 기둥과 흰 벽, 오렌지색 전시대가 있는 넓은 전시장" data-cap="《열 개의 눈》, 2025 · 대형 기둥과 흰 벽, 오렌지색 전시대가 보이는 전시장" data-pos="50% 55%" loading="lazy">
+  <img class="bl-img" src="images/bleed-collecting-future.jpg" alt="흰 벽에 작은 사각 작품이 줄지어 걸리고 붉은 기둥 조각이 선 전시장" data-cap="《미래를 수집하기》 설치 전경 · 흰 전시 벽면과 조각이 놓인 넓은 전시 공간" data-pos="50% 50%" loading="lazy">
+  <img class="bl-img" src="images/bleed-rhino-unicorn.webp" alt="숲과 인물 실루엣을 그린 대형 흑백 벽화와 바닥에 기대 놓인 그림들" data-cap="《코뿔소와 유니콘》, 2026 · 대형 벽면 일러스트레이션을 활용한 전시장 내부" data-pos="50% 55%" loading="lazy">
+  <img class="bl-img" src="images/bleed-graybox.jpg" alt="검은 천장과 반사되는 바닥, 영상 화면들이 설치된 어두운 전시장" data-cap="《그레이박스 이후》, 2022 · 블랙 천장과 반사되는 바닥, 디지털 영상 설치 작품" data-pos="50% 58%" loading="lazy">
+  <div class="bleed-cap"><h3 aria-live="polite">‘어둠에서 보기’를 주제로 한 2024 부산비엔날레가 열리는 부산현대미술관 1층 전시장</h3></div>
 </section>
 
 <!-- ===================== FOOTER ===================== -->
