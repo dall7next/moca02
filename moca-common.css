@@ -238,3 +238,8 @@ html[data-mode="w-g"] .slide .sl-copy h2{color:var(--mi-leaf)!important;text-sha
 
 /* 바로가기: 아직 페이지가 없는 항목은 링크 없이 표시만 */
 .set-links span{font-size:12px;padding:6px 14px;border:1px solid var(--line);border-radius:20px;color:var(--ink);cursor:default}
+
+/* 백 + 선록~그린: 하위 메뉴(마우스 오버 시 펼쳐지는 메뉴) — 흰 배경에 선록 글자, 오버 시 그린 배경 + 흰 글자 */
+html[data-mode="w-g"] .gnb-sub{background:#fff!important;border-top:2px solid var(--mi-leaf)!important;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+html[data-mode="w-g"] .gnb-sub a{color:var(--mi-leaf)!important;background:transparent!important}
+html[data-mode="w-g"] .gnb-sub a:hover,html[data-mode="w-g"] .gnb-sub a:focus-visible{background:var(--mi-leaf)!important;color:#fff!important}
