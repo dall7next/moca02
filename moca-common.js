@@ -27,9 +27,9 @@
     { t: '현재 전시', h: 'exhibition.html#current' },
     { t: '프로그램',  h: 'index.html#events', nolink: 1 },
     { t: '공지사항',  h: 'index.html#notice', nolink: 1 },
-    { t: '관람 안내', h: 'index.html#visit' },
-    { t: '소장품',    h: 'index.html#collection' },
-    { t: '뮤지엄숍',  h: 'index.html#store' }
+    { t: '관람 안내', h: 'index.html#visit', nolink: 1 },
+    { t: '소장품',    h: 'index.html#collection', nolink: 1 },
+    { t: '뮤지엄숍',  h: 'index.html#store', nolink: 1 }
   ];
   var QUICK = [LINKS[0], LINKS[1], LINKS[2], LINKS[3]];
 
@@ -75,7 +75,7 @@
         return '<button type="button" data-mode="' + m.id + '"><i style="background:' + m.sw + '"></i>' + m.label + '</button>';
       }).join('') + '</div></div>' +
       '<div class="set-group"><h3>바로가기</h3><div class="set-links">' +
-      LINKS.map(function (l) { return '<a href="' + l.h + '">' + l.t + '</a>'; }).join('') + '</div></div>' +
+      LINKS.map(function (l) { return l.nolink ? '<span aria-disabled="true">' + l.t + '</span>' : '<a href="' + l.h + '">' + l.t + '</a>'; }).join('') + '</div></div>' +
       '<button class="set-reset" id="setReset" type="button">설정 초기화</button>';
     body.appendChild(p);
   }

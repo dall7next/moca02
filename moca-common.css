@@ -235,3 +235,6 @@ html[data-mode="w-g"] .hero .hero-copy .hero-line h1{color:var(--mi-leaf)!import
 html[data-mode="w-g"] .hero .hero-copy .hero-line h1{text-shadow:none!important}
 html[data-mode] .slide .sl-copy :is(h2,h3,p,span,small,b){color:#fff!important}
 html[data-mode="w-g"] .slide .sl-copy h2{color:var(--mi-leaf)!important;text-shadow:none!important}
+
+/* 바로가기: 아직 페이지가 없는 항목은 링크 없이 표시만 */
+.set-links span{font-size:12px;padding:6px 14px;border:1px solid var(--line);border-radius:20px;color:var(--ink);cursor:default}
