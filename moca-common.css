@@ -229,4 +229,4 @@ html[data-mode] :is(.card,.row){background:transparent!important}
 html[data-mode] .side-quick{border-top:1px solid var(--green);border-bottom:1px solid var(--green);border-right:0}
 
 /* 백 + 선록~그린: 배너 제목은 선록(#39b034) */
-html[data-mode="w-g"] .hero-copy h1{color:var(--mi-leaf)!important;text-shadow:0 1px 0 rgba(255,255,255,.35),0 2px 16px rgba(255,255,255,.35)}
+html[data-mode="w-g"] .hero .hero-copy .hero-line h1{color:var(--mi-leaf)!important;text-shadow:0 1px 0 rgba(255,255,255,.35),0 2px 16px rgba(255,255,255,.35)}
