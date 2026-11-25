@@ -224,3 +224,6 @@ html[data-mode] :is(.card,.row){background:transparent!important}
 @media (max-width:680px){
     .ai-btn{right:27px;bottom:126px;width:53px;height:48px}
 }
+
+/* 오른쪽 바로가기: 색상 조합에서 바탕과 섞이지 않도록 1px 테두리 */
+html[data-mode] .side-quick{border-top:1px solid var(--green);border-bottom:1px solid var(--green);border-right:1px solid var(--green)}
