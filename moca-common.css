@@ -230,3 +230,8 @@ html[data-mode] .side-quick{border-top:1px solid var(--green);border-bottom:1px 
 
 /* 백 + 선록~그린: 배너 제목은 선록(#39b034) */
 html[data-mode="w-g"] .hero .hero-copy .hero-line h1{color:var(--mi-leaf)!important;text-shadow:0 1px 0 rgba(255,255,255,.35),0 2px 16px rgba(255,255,255,.35)}
+
+/* 백 + 선록~그린: 배너 제목 그림자 없이 / 전시 슬라이드 제목은 선록 */
+html[data-mode="w-g"] .hero .hero-copy .hero-line h1{text-shadow:none!important}
+html[data-mode] .slide .sl-copy :is(h2,h3,p,span,small,b){color:#fff!important}
+html[data-mode="w-g"] .slide .sl-copy h2{color:var(--mi-leaf)!important;text-shadow:none!important}
