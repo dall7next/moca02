@@ -6,7 +6,7 @@
 <title>전시 | 부산현대미술관 Museum of Contemporary Art Busan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#111;
@@ -14,7 +14,7 @@
     --muted:#888;
     --line:#e3e3e3;
     --bg-soft:#f4f4f4;
-    --green:#3fb34f;
+    --green:#39b034;
     --green-dark:#1f7a2e;
     --dark:#141414;
     --hover:#39b034;
@@ -22,14 +22,14 @@
   *{margin:0;padding:0;box-sizing:border-box}
   [hidden]{display:none!important}
   html{scroll-behavior:smooth}
-  body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{font-family:var(--font);color:var(--text);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   img{display:block;width:100%;height:100%;object-fit:cover}
   a{color:inherit;text-decoration:none}
   ul,ol{list-style:none}
   button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
   .wrap{max-width:1320px;margin:0 auto;padding:0 40px}
   .inner{max-width:1240px;margin:0 auto}
-  .en{font-family:'Montserrat',sans-serif}
+  .en{font-family:var(--font)}
 
   /* ---------- page transition (timing and easing follow rafaelstorck.com) ---------- */
   @view-transition { navigation: auto; }
@@ -75,7 +75,7 @@
   .gnb-sub a::after{display:none}
   .gnb-sub a:hover{color:var(--green);background:rgba(255,255,255,.08)}
   .util{display:flex;align-items:center;gap:22px;font-size:13px}
-  .util .lang{font-family:'Montserrat',sans-serif;font-weight:600;letter-spacing:1px;color:#fff}
+  .util .lang{font-family:var(--font);font-weight:600;letter-spacing:1px;color:#fff}
   .burger{width:26px;height:18px;position:relative;color:#fff}
   .burger i{position:absolute;left:0;right:0;height:2px;background:#fff}
   .burger i:nth-child(1){top:0}.burger i:nth-child(2){top:8px}.burger i:nth-child(3){top:16px}
@@ -83,13 +83,13 @@
   /* ---------- page head: kicker, title, breadcrumb (reference: 상단 제목 영역) ---------- */
   .page-head{padding:56px 0 0}
   .page-head .inner{padding:0}
-  .kicker{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--green-dark)}
+  .kicker{font-family:var(--font);font-size:12px;font-weight:700;letter-spacing:2px;color:var(--green-dark)}
   .ph-row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-top:8px}
   .page-head h1{font-size:44px;font-weight:700;color:var(--ink);letter-spacing:-.8px;line-height:1.2}
   .ln{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
   .ln > span{display:block;animation:lnUp 1s cubic-bezier(.2,.8,.2,1) both}
   @keyframes lnUp{from{transform:translateY(110%)}to{transform:none}}
-  .crumb{font-family:'Montserrat',sans-serif;font-size:12px;color:#777;padding-bottom:12px;white-space:nowrap}
+  .crumb{font-family:var(--font);font-size:12px;color:#777;padding-bottom:12px;white-space:nowrap}
   .crumb span{margin:0 10px;color:#bbb}
   .crumb b{color:var(--ink);font-weight:500}
 
@@ -119,7 +119,7 @@
   .pr-kicker{display:block;font-size:13px;font-weight:600;letter-spacing:1.5px;color:var(--green-dark)}
   .pr-copy h2{margin-top:18px;font-size:clamp(26px,2.6vw,34px);font-weight:700;line-height:1.4;letter-spacing:-.5px;color:var(--ink)}
   .pr-copy p{margin-top:18px;font-size:15px;color:#666}
-  .pr-tag{position:relative;z-index:1;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(36px,4.4vw,58px);line-height:1;color:var(--green-dark);white-space:nowrap;opacity:0;transform:translateX(24px);transition:opacity 1s ease .35s,transform 1s ease .35s}
+  .pr-tag{position:relative;z-index:1;font-family:var(--font);font-style:normal;font-weight:600;font-size:clamp(36px,4.4vw,58px);line-height:1;color:var(--green-dark);white-space:nowrap;opacity:0;transform:translateX(24px);transition:opacity 1s ease .35s,transform 1s ease .35s}
   .slide.promo.on .pr-copy,.slide.promo.on .pr-tag{opacity:1;transform:none}
   @media (max-width:900px){.slide.promo{flex-direction:column;align-items:flex-start;padding:48px 32px}}
   @media (max-width:680px){.slide.promo{padding:40px 24px}}
@@ -152,7 +152,7 @@
   .sl-poster{position:absolute;left:50%;top:50%;height:calc(100% - 156px);aspect-ratio:1/1;z-index:2;box-shadow:0 18px 40px rgba(0,0,0,.35);opacity:0;transform:translate(-50%,calc(-50% + 16px));transition:opacity .9s ease .3s,transform .9s ease .3s}
   .slide.on .sl-poster{opacity:1;transform:translate(-50%,-50%)}
   .sl-poster img{width:100%;height:100%;object-fit:cover;display:block}
-  .slide .tagline{position:absolute;right:48px;top:40px;z-index:2;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.2vw,30px);color:#fff;opacity:.95}
+  .slide .tagline{position:absolute;right:48px;top:40px;z-index:2;font-family:var(--font);font-style:normal;font-size:clamp(20px,2.2vw,30px);color:#fff;opacity:.95}
   .sl-copy{position:absolute;left:52px;bottom:52px;z-index:2;color:#fff;max-width:640px}
   .label{display:inline-block;border:1px solid rgba(255,255,255,.7);padding:6px 14px;font-size:12px;letter-spacing:.5px}
   .sl-copy h2{font-size:clamp(34px,4vw,54px);font-weight:700;letter-spacing:-1px;line-height:1.15;margin-top:18px}
@@ -162,7 +162,7 @@
   .sl-btn{position:absolute;right:48px;bottom:52px;z-index:3;display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border:1px solid rgba(255,255,255,.8);color:#fff;font-size:14px;transition:.25s}
   .sl-btn:hover{background:#fff;color:var(--ink)}
   .sl-btn svg{width:16px;height:16px}
-  .hs-ctrl{position:absolute;right:26px;bottom:24px;z-index:3;display:flex;align-items:center;gap:12px;color:#fff;font-family:'Montserrat',sans-serif;font-size:13px}
+  .hs-ctrl{position:absolute;right:26px;bottom:24px;z-index:3;display:flex;align-items:center;gap:12px;color:#fff;font-family:var(--font);font-size:13px}
   .hs-ctrl .circ{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.8);color:#fff;display:grid;place-items:center;transition:.25s}
   .hs-ctrl .circ:hover{background:#fff;color:var(--ink)}
   .hs-ctrl .circ svg{width:16px;height:16px}
@@ -183,11 +183,11 @@
   /* ---------- shared blocks ---------- */
   .page{padding:0 0 0}
   .panel[hidden]{display:none}
-  .badge{display:inline-flex;align-items:center;gap:6px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;padding:5px 11px;background:var(--bg-soft);border-radius:3px;color:var(--ink);width:max-content}
+  .badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font);font-size:11px;font-weight:700;padding:5px 11px;background:var(--bg-soft);border-radius:3px;color:var(--ink);width:max-content}
   .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}
   .badge.end::before{background:#bbb}
   .badge.soon::before{background:var(--ink)}
-  .count{font-family:'Montserrat',sans-serif;font-size:13px;color:var(--muted)}
+  .count{font-family:var(--font);font-size:13px;color:var(--muted)}
   .count b{color:var(--ink)}
   .cards-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin:120px 0 36px}
   .cards-head h2{font-size:30px;font-weight:800;color:var(--ink);letter-spacing:-.5px}
@@ -206,7 +206,7 @@
   .row .frame{aspect-ratio:4/3;overflow:hidden;border-radius:14px;background:var(--bg-soft)}
   .row.rev .frame{order:2}
   .row.wide .frame{aspect-ratio:16/10;margin-right:-90px;position:relative;z-index:1}
-  .row .num{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--green-dark);letter-spacing:1px}
+  .row .num{font-family:var(--font);font-size:14px;font-weight:700;color:var(--green-dark);letter-spacing:1px}
   .row h3{font-size:30px;font-weight:700;color:var(--ink);margin:12px 0 14px;letter-spacing:-.4px;line-height:1.3}
   .row p{font-size:14px;color:#666;line-height:1.9;max-width:420px}
   .row.rev .txt{padding-left:40px}
@@ -215,8 +215,8 @@
   /* list toolbar: count, view toggle, search */
   .tools{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin:70px 0 40px}
   .tl-left{display:flex;align-items:center;gap:22px}
-  .tools .count{font-family:'Noto Sans KR',sans-serif;font-size:16px;color:var(--ink)}
-  .tools .count b{color:var(--green-dark);font-family:'Montserrat',sans-serif;margin:0 4px}
+  .tools .count{font-family:var(--font);font-size:16px;color:var(--ink)}
+  .tools .count b{color:var(--green-dark);font-family:var(--font);margin:0 4px}
   .vbtn{width:28px;height:28px;display:grid;place-items:center;color:#999;transition:color .2s}
   .vbtn svg{width:20px;height:20px}
   .vbtn:hover,.vbtn[aria-pressed="true"]{color:var(--ink)}
@@ -231,7 +231,7 @@
   .card .frame img{transition:transform .6s}
   .card:hover .frame img{transform:scale(1.05)}
   .card .frame{position:relative}
-  .card .dday{position:absolute;left:14px;top:14px;z-index:1;padding:5px 11px;border-radius:999px;background:var(--green);color:#fff;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;line-height:1.2}
+  .card .dday{position:absolute;left:14px;top:14px;z-index:1;padding:5px 11px;border-radius:999px;background:var(--green);color:#fff;font-family:var(--font);font-size:12px;font-weight:700;letter-spacing:.5px;line-height:1.2}
   .card .card-icos{position:absolute;left:50%;top:50%;z-index:1;display:flex;gap:10px;transform:translate(-50%,-50%);pointer-events:none}
   .card .audio-ico{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,.45);border:1.5px solid rgba(255,255,255,.85);color:#fff;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);transition:background .25s,transform .25s}
   .card .audio-ico svg{width:30px;height:30px}
@@ -254,7 +254,7 @@
   .list-view .card .kind{margin-top:4px}
   .list-view .card .meta{margin-top:20px;padding-top:16px}
   .pager{display:flex;justify-content:center;margin-top:70px}
-  .pager a{min-width:52px;padding:10px 0;text-align:center;font-family:'Montserrat',sans-serif;font-size:16px;color:var(--green-dark);border-bottom:2px solid var(--green-dark)}
+  .pager a{min-width:52px;padding:10px 0;text-align:center;font-family:var(--font);font-size:16px;color:var(--green-dark);border-bottom:2px solid var(--green-dark)}
   .card:focus-visible{outline:2px solid var(--green);outline-offset:6px}
   .empty{font-size:14px;color:var(--muted);padding:40px 0}
 
@@ -272,7 +272,7 @@
   .coming p{font-size:15px;color:#666;margin-top:16px}
   .cal-bar{display:flex;align-items:center;gap:20px;margin-top:40px;flex-wrap:wrap}
   .years{display:flex;gap:6px}
-  .years button,.cal-all{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:600;padding:7px 16px;border:1px solid var(--line);border-radius:30px;color:#888;transition:.2s}
+  .years button,.cal-all{font-family:var(--font);font-size:14px;font-weight:600;padding:7px 16px;border:1px solid var(--line);border-radius:30px;color:#888;transition:.2s}
   .years button[aria-pressed="true"],.cal-all[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
   .years button:hover,.cal-all:hover{border-color:var(--ink);color:var(--ink)}
   .years button[aria-pressed="true"]:hover,.cal-all[aria-pressed="true"]:hover{color:#fff}
@@ -280,7 +280,7 @@
   .months{display:grid;grid-template-columns:repeat(12,1fr);border:1px solid var(--line);margin:16px 0 0}
   .months li{border-left:1px solid var(--line)}
   .months li:first-child{border-left:0}
-  .months button{display:block;width:100%;padding:14px 0;text-align:center;font-family:'Montserrat',sans-serif;font-size:12px;color:#bbb;cursor:default}
+  .months button{display:block;width:100%;padding:14px 0;text-align:center;font-family:var(--font);font-size:12px;color:#bbb;cursor:default}
   .months li.has{background:var(--bg-soft)}
   .months li.has button{color:var(--ink);font-weight:700;cursor:pointer}
   .months li.has button::after{content:"";display:block;width:6px;height:6px;margin:6px auto 0;border-radius:50%;background:var(--green)}
@@ -329,7 +329,7 @@
   /* 음성해설 · 오디오 가이드: 트랙별 카드 */
   .dt-audio{max-width:1040px;margin:56px auto 0}
   .au-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-bottom:16px;margin-bottom:22px;border-bottom:1px solid var(--ink)}
-  .au-head .au-kicker{display:block;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--green-dark)}
+  .au-head .au-kicker{display:block;font-family:var(--font);font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--green-dark)}
   .dt-audio h3{margin:6px 0 0;font-size:22px;font-weight:800;letter-spacing:-.4px;color:var(--ink)}
   .au-head .au-total{font-size:13px;color:var(--muted)}
   .au-head .au-total b{color:var(--ink)}
@@ -337,7 +337,7 @@
   .au-card{display:flex;flex-direction:column;gap:16px;padding:22px 22px 20px;background:#fff;border:1px solid #e3e6e2;border-radius:14px;box-shadow:0 1px 2px rgba(0,0,0,.04);transition:border-color .25s,box-shadow .25s,transform .25s}
   .au-card:hover{border-color:var(--green);box-shadow:0 10px 26px rgba(0,0,0,.08);transform:translateY(-2px)}
   .au-top{display:flex;align-items:flex-start;gap:14px}
-  .au-no{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--green);color:#fff;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700}
+  .au-no{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--green);color:#fff;font-family:var(--font);font-size:15px;font-weight:700}
   .au-name{margin:0;min-width:0;font-size:16px;font-weight:700;line-height:1.45;color:var(--ink)}
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   .au-name .au-voice{display:inline-flex;align-items:center;gap:5px;margin-top:6px;padding:3px 10px;border-radius:999px;background:#eef3ef;font-size:12px;font-weight:500;color:var(--green-dark)}
@@ -417,13 +417,13 @@
   .guide-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
   .guide-row span{font-size:12px;padding:5px 12px;border:1px solid var(--line);border-radius:20px;color:#555}
   .guide-row span.on{background:var(--bg-soft);color:var(--ink);font-weight:600}
-  .views{font-family:'Montserrat',sans-serif;font-size:12px;color:var(--muted);margin-top:20px}
+  .views{font-family:var(--font);font-size:12px;color:var(--muted);margin-top:20px}
   .views b{color:var(--ink)}
   .outline-head{margin:130px 0 26px}
   .outline-head h3{font-size:30px;font-weight:800;color:var(--ink);letter-spacing:-.4px;margin-top:10px}
   .outline-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
   .outline-grid li{display:flex;flex-direction:column;gap:10px;padding:28px 28px 28px 0;border-bottom:1px solid var(--line)}
-  .outline-grid li b{font-family:'Montserrat',sans-serif;font-size:12px;color:var(--green-dark);letter-spacing:1px}
+  .outline-grid li b{font-family:var(--font);font-size:12px;color:var(--green-dark);letter-spacing:1px}
   .outline-grid li span{font-size:17px;color:var(--ink);font-weight:500}
 
   /* ---------- footer (4 columns) ---------- */
@@ -431,7 +431,7 @@
   .ft{display:grid;grid-template-columns:1.25fr 1fr 1fr 1.2fr;gap:48px}
   .ft address{font-style:normal;font-size:13px;color:#666;line-height:1.9}
   .ft address b{color:var(--ink)}
-  .ft h5{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:1px;color:var(--ink);margin-bottom:16px}
+  .ft h5{font-family:var(--font);font-size:12px;letter-spacing:1px;color:var(--ink);margin-bottom:16px}
   .ft ul li{font-size:13px;color:#666;padding:4px 0}
   .ft ul li a:hover{color:var(--ink)}
   .sns{display:flex;gap:16px;margin-top:26px}
@@ -444,7 +444,7 @@
   .news button:hover{background:var(--green-dark)}
   .ft-logo{margin-top:50px}
   .ft-logo img{width:auto;height:56px;max-width:100%;object-fit:contain}
-  .copyright{background:var(--dark);color:#888;font-size:11px;text-align:center;padding:16px 0;margin-top:70px;font-family:'Montserrat',sans-serif}
+  .copyright{background:var(--dark);color:#888;font-size:11px;text-align:center;padding:16px 0;margin-top:70px;font-family:var(--font)}
 
   /* ---------- motion for panels ---------- */
   .panel.enter .reveal{animation:exIn .9s cubic-bezier(.2,.8,.2,1) both}
@@ -461,7 +461,7 @@
   .to-top.show{opacity:1;visibility:visible;transform:none}
   .to-top:hover{background:var(--hover);border-color:var(--hover)}
   .to-top svg{width:16px;height:16px}
-  .to-top span{font:600 9px/1 Montserrat,sans-serif;letter-spacing:.08em}
+  .to-top span{font:600 9px/1 var(--font);letter-spacing:.08em}
 
   /* ---------- responsive ---------- */
   @media (max-width:1280px){
@@ -520,6 +520,8 @@
     .to-top{right:16px;bottom:16px;width:44px;height:44px}
   }
 </style>
+<link rel="stylesheet" href="moca-common.css">
+<script src="moca-common.js" defer></script>
 <script>
   /* a transition that ends on 메인 is tagged so the CSS can keep 메인 fixed */
   addEventListener('pagereveal', function (e) {
@@ -545,12 +547,12 @@
       <nav class="gnb">
         <!-- 메뉴 구성(안) 1Depth · 2Depth 기준 -->
         <div class="gnb-item">
-          <a href="index.html">관람·예약 안내</a>
+          <a href="index.html#visit">관람·예약 안내</a>
           <ul class="gnb-sub">
-            <li><a href="index.html">관람 안내</a></li>
+            <li><a href="index.html#visit">관람 안내</a></li>
             <li><a href="https://reserve.busan.go.kr/applcnt/searchProgrm?siteNo=&amp;searchGubun=ALL&amp;searchText=%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80" target="_blank" rel="noopener" title="새 창: 부산시 통합예약시스템">온라인 예약</a></li>
-            <li><a href="index.html">오시는 길</a></li>
-            <li><a href="index.html">공간 &amp; 편의시설</a></li>
+            <li><a href="index.html#visit-way">오시는 길</a></li>
+            <li><a href="index.html#visit-space">공간 &amp; 편의시설</a></li>
           </ul>
         </div>
         <div class="gnb-item">
@@ -587,7 +589,7 @@
         </div>
         <a href="index.html#store">뮤지엄숍</a>
         <div class="gnb-item">
-          <a href="index.html">미술관 소개</a>
+          <a href="index.html#about">미술관 소개</a>
           <ul class="gnb-sub">
             <li><a href="index.html">인사말</a></li>
             <li><a href="index.html">연혁</a></li>
@@ -609,7 +611,7 @@
 <section class="page-head">
   <div class="wrap">
     <div class="inner">
-      <p class="kicker">EXHIBITION</p>
+      <p class="kicker">전시</p>
       <div class="ph-row">
         <h1 id="subTitle"><span class="ln"><span>현재 전시</span></span></h1>
         <nav class="crumb" aria-label="현재 위치">홈<span>›</span>전시<span>›</span><b id="crumbCur">현재 전시</b></nav>
@@ -722,9 +724,9 @@
     <div>
       <address>
         <b>(49300) 부산광역시 사하구 낙동남로 1191 (하단동) 부산현대미술관</b><br>
-        TEL. 051-220-7400 &nbsp;|&nbsp; FAX. 051-220-7410<br>
-        화 – 일 AM 10:00 – PM 6:00 (입장마감 PM 5:30)<br>
-        1월 1일, 매주 월요일 휴관
+        TEL. 051-220-7400<br>
+        관람 시간 화요일–일요일 10:00–18:00 (전시 종료 30분 전 입장 마감)<br>
+        휴관일 월요일, 1월 1일 (월요일이 공휴일이면 그다음 날 휴관)
       </address>
       <div class="sns">
         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg></a>
@@ -734,7 +736,7 @@
       </div>
     </div>
     <div>
-      <h5>EXHIBITION</h5>
+      <h5>전시</h5>
       <ul>
         <li><a href="#current">현재 전시</a></li>
         <li><a href="#upcoming">예정 전시</a></li>
@@ -742,7 +744,7 @@
       </ul>
     </div>
     <div>
-      <h5>POLICY</h5>
+      <h5>이용 정책</h5>
       <ul>
         <li><a href="#">개인정보처리방침</a></li>
         <li><a href="#">저작권 보호정책</a></li>
@@ -751,11 +753,6 @@
       </ul>
     </div>
     <div>
-      <form class="news" onsubmit="event.preventDefault();this.querySelector('button').textContent='메시지 전송 완료';">
-        <h4 class="en">Newsletter</h4>
-        <input type="email" placeholder="이메일 주소를 입력하세요" required>
-        <button type="submit">메시지 보내기</button>
-      </form>
       <div class="ft-logo"><img src="images/logo-footer.svg" alt="부산현대미술관 Busan Museum of Contemporary Art"></div>
     </div>
   </div>
@@ -782,7 +779,7 @@
       // 포스터 + 작품 사진: 야외정원의 새 조형물(Re: 새-새-정글)과 로비의 모듈 의자
       gallery: ['images/re-saesae-chair-poster.jpg', 'images/re-saesae-chair-lobby.jpg', 'images/re-saesae-duck-portrait.jpg', 'images/re-saesae-duck-child.jpg', 'images/re-saesae-duck-sky.jpg', 'images/re-saesae-jungle.webp', 'images/re-saesae-chair-lobby-02.jpg', 'images/re-saesae-chair-lobby-03.jpg', 'images/re-saesae-tree.jpg', 'images/re-saesae-duck-blue.jpg', 'images/re-saesae-aerial.jpg', 'images/re-saesae-duck-evening.jpg', 'images/re-saesae-wave.jpg'],
       size: [['쇠백로', '156,000 x 10,000 x 9,300 mm'], ['파도 1', '2,150 x 2,150 x 1,675 mm'], ['파도 2', '4,350 x 2,700 x 2,200 mm'], ['파도 3', '4,350 x 2,700 x 1,625 mm'], ['나무', '5,000 x 5,000 x 6,255 mm']],
-      tagline: 'Nature, Human & New Media',
+      tagline: '자연, 뉴미디어, 인간',
       views: 1000, type: ['audio', 'vr', 'sign', 'voice'],
       desc: [
         '《Re: 새-새-의자(가제)》는 2022년부터 2023년까지 진행되었던 자연과의 상생, 지속가능성을 모색한 야외 전시 《Re: 새-새-정글》의 의의와 목적을 일회성으로 휘발하지 않기 위해 새가 새롭게 다시 의자로 태어나는 프로젝트다. 《Re: 새-새-의자》라는 제목과 같이 조형물의 플라스틱 모듈을 이용해 실용 가구를 제작하여 폐자재로 인해 파생된 사회 환경문제에 대한 관심을 높이고자 한다.',
@@ -1064,8 +1061,8 @@
 
   /* hero slides per tab */
   const INTRO = {
-    past: { promo: true, kicker: 'EXHIBITION ARCHIVE', title: ['온라인 아카이브에서', '다시 만나는 지난 전시'], sub: '지난 전시를 온라인에서 다시 볼 수 있습니다.', tagline: 'Art, beyond time.' },
-    upcoming: { seasons: [['봄','images/season-spring.webp'],['여름','images/season-summer.webp'],['가을','images/season-autumn.webp'],['겨울','images/upcoming-banner.webp']], kicker: 'COMING SOON', title: '다음 시즌의 부산현대미술관', sub: '예정전시를 주목하세요' }
+    past: { promo: true, kicker: '전시 아카이브', title: ['온라인 아카이브에서', '다시 만나는 지난 전시'], sub: '지난 전시를 온라인에서 다시 볼 수 있습니다.', tagline: '시간을 넘어, 예술' },
+    upcoming: { seasons: [['봄','images/season-spring.webp'],['여름','images/season-summer.webp'],['가을','images/season-autumn.webp'],['겨울','images/upcoming-banner.webp']], kicker: '준비 중', title: '다음 시즌의 부산현대미술관', sub: '예정전시를 주목하세요' }
   };
   const SLIDES = { current: ['re-saesae-chair', 'patrick-blanc'], upcoming: ['up-01', 'up-02', 'up-03'], past: ['gray-box', 'eyes', 'wonder-turn'] };
 
@@ -1307,7 +1304,7 @@
 
     $('#detailBody').innerHTML = `
       <div class="dt-head reveal">
-        <span class="kicker">EXHIBITION</span>
+        <span class="kicker">전시</span>
         <h2>${esc(e.title)}</h2>
         <div class="dt-line">
           <p>${esc(e.period)}<i></i>${esc(e.place)}<i></i>조회수 ${Number(e.views).toLocaleString('ko-KR')}</p>

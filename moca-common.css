@@ -1,0 +1,134 @@
+/* ==========================================================================
+   부산현대미술관 공통 스타일 (메인 · 전시 등 모든 페이지에서 함께 사용)
+   - 서체: 부산모카(Busan MoCA) 전용 서체
+   - 색상: M.I. 상징색채 (10단계 흑·백·회색 + 6가지 그린)
+   - 화면 설정(글자 크기·굵기 / 색상 조합), 바로가기
+   ========================================================================== */
+
+/* ---------- 서체: 부산모카(Busan MoCA) ----------
+   웹폰트 파일(WOFF2 / WOFF / OTF·TTF)을 받으면 아래 src 맨 앞에 url() 한 줄만 추가하면
+   누리집 전체에 한 번에 적용됩니다.
+   예)  src:url("fonts/BusanMoCA-Regular.woff2") format("woff2"), local("Busan MoCA");
+   파일이 없는 동안에는 비슷한 고딕 계열(Noto Sans KR)로 대신 표시됩니다. */
+@font-face{font-family:'Busan MoCA';font-weight:400;font-style:normal;font-display:swap;
+  src:local('Busan MoCA'),local('BusanMoCA'),local('Busan MoCA Regular'),local('BusanMoCA-Regular')}
+@font-face{font-family:'Busan MoCA';font-weight:500;font-style:normal;font-display:swap;
+  src:local('Busan MoCA Medium'),local('BusanMoCA-Medium')}
+@font-face{font-family:'Busan MoCA';font-weight:700;font-style:normal;font-display:swap;
+  src:local('Busan MoCA Bold'),local('BusanMoCA-Bold')}
+
+:root{
+  --font:'Busan MoCA','Noto Sans KR','Malgun Gothic',sans-serif;
+  /* M.I. 주색상 - 흑백 계조 10단계 */
+  --mi-01:#0f1612; --mi-02:#2c302e; --mi-03:#3c423f; --mi-04:#606863; --mi-05:#858c88;
+  --mi-06:#a7afac; --mi-07:#c9d1ce; --mi-08:#e7e8e6; --mi-09:#f4f4f2; --mi-10:#ffffff;
+  /* M.I. 주색상 - 그린 6가지 */
+  --mi-neon:#ceff88; --mi-fresh:#65e200; --mi-green:#00d832; --mi-olive:#84ac3a; --mi-leaf:#39b034; --mi-mint:#b3e2ac;
+  --on-accent:#fff;
+}
+body,button,input,textarea,select{font-family:var(--font)}
+
+/* ---------- 글자 크기 + 굵기 (부산모카 레귤러 · 미디엄 · 볼드) ---------- */
+html[data-fw="500"] body :is(p,li,address,small,span,em,dd,dt,td,th,label,figcaption,input,.exh-desc){font-weight:500}
+html[data-fw="700"] body :is(p,li,address,small,span,em,dd,dt,td,th,label,figcaption,input,.exh-desc){font-weight:700}
+html[data-fw="700"] body :is(h1,h2,h3,h4,h5,b,strong,.sec-title,.gnb a){font-weight:900}
+body > section, body > main, body > footer{zoom:var(--fz,1)}
+.hero{height:calc(100vh / var(--fz,1))}
+
+/* ---------- 화면 설정 버튼 (비트윈즈 마스코트 위에 고정) ---------- */
+.set-fab{position:fixed;z-index:91;right:12px;bottom:176px;width:64px;height:64px;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  background:var(--mi-01);color:#fff;border:2px solid var(--mi-fresh);box-shadow:0 4px 14px rgba(0,0,0,.35);
+  transition:transform .25s,background .25s}
+.set-fab:hover,.set-fab[aria-expanded="true"]{transform:scale(1.08);background:var(--mi-03)}
+.set-fab svg{width:24px;height:24px}
+.set-fab span{font-size:10px;font-weight:700;line-height:1;letter-spacing:-.2px}
+.set-fab.no-ai{bottom:102px}
+@media (max-width:1480px){.set-fab{bottom:208px}.set-fab.no-ai{bottom:134px}}
+@media (max-width:680px){.set-fab{right:20px;bottom:184px;width:56px;height:56px}.set-fab.no-ai{bottom:126px}.set-fab svg{width:21px;height:21px}}
+.set-fab:focus-visible,.set-panel button:focus-visible,.set-panel a:focus-visible,.side-quick a:focus-visible{outline:3px solid var(--mi-fresh);outline-offset:3px}
+
+/* ---------- 자주 찾는 페이지 바로가기 (화면 오른쪽 가장자리 고정) ---------- */
+.side-quick{position:fixed;z-index:80;right:0;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;
+  background:var(--mi-01);border-left:3px solid var(--mi-fresh);border-radius:6px 0 0 6px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.25)}
+.side-quick a{display:block;padding:16px 11px;color:#fff;font-size:13px;font-weight:500;line-height:1.25;letter-spacing:1px;
+  writing-mode:vertical-rl;text-align:center;transition:background .2s,color .2s}
+.side-quick a + a{border-top:1px solid rgba(255,255,255,.18)}
+.side-quick a:hover{background:var(--mi-fresh);color:var(--mi-01)}
+@media (max-width:1024px){.side-quick{display:none}}
+
+/* ---------- 화면 설정 패널 ---------- */
+.set-panel{position:fixed;z-index:100;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--panel-bg,#fff);color:var(--text);
+  box-shadow:-20px 0 60px rgba(0,0,0,.18);display:flex;flex-direction:column;padding:34px 32px 30px;overflow-y:auto;
+  transform:translateX(100%);visibility:hidden;transition:transform .45s cubic-bezier(.22,.8,.26,1),visibility .45s}
+.set-panel.open{transform:none;visibility:visible}
+.set-close{position:absolute;top:22px;right:22px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--ink);transition:background .2s}
+.set-close:hover{background:var(--bg-soft)}
+.set-close svg{width:20px;height:20px}
+.set-panel h2{font-size:17px;font-weight:700;color:var(--ink);padding:6px 44px 26px 0;border-bottom:1px solid var(--line)}
+.set-desc{font-size:13px;color:var(--muted);margin:26px 0 8px;line-height:1.7}
+.set-group{padding:22px 0;border-bottom:1px solid var(--line)}
+.set-group h3{font-size:12px;font-weight:700;color:var(--ink);letter-spacing:.5px;margin-bottom:14px}
+.set-size{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.set-size button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;height:74px;border:1px solid var(--line);border-radius:12px;color:var(--ink);line-height:1;transition:.2s}
+.set-size button b{font-size:var(--s);font-weight:var(--w)}
+.set-size button small{font-size:11px;font-weight:400;color:var(--muted)}
+.set-mode{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.set-mode button{display:flex;align-items:center;gap:10px;min-height:46px;padding:6px 14px;border:1px solid var(--line);border-radius:30px;font-size:13px;font-weight:500;color:var(--ink);text-align:left;line-height:1.3;transition:.2s}
+.set-mode button i{width:22px;height:22px;border-radius:50%;flex:none;border:1px solid rgba(128,128,128,.6)}
+.set-size button:hover,.set-mode button:hover{border-color:var(--ink)}
+.set-size button[aria-pressed="true"],.set-mode button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.set-links{display:flex;flex-wrap:wrap;gap:8px}
+.set-links a{font-size:12px;padding:6px 14px;border:1px solid var(--line);border-radius:20px;color:var(--ink);transition:.2s}
+.set-links a:hover{background:var(--hover);border-color:var(--hover);color:var(--on-accent)}
+.set-reset{margin-top:auto;align-self:flex-start;font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:3px;padding:20px 0 0}
+.set-reset:hover{color:var(--ink)}
+@media (max-width:680px){.set-panel{padding:28px 20px 24px}}
+
+/* ---------- 색상 조합 (M.I. 상징색채) ----------
+   그린 계열은 배경·시력 조건에 따라 식별이 어려울 수 있어, 그린은 '배경색 / 강조선 / 버튼 바탕'으로만 쓰고
+   글자는 검정·네온그린(검정 바탕)·백색 등 대비가 충분한 조합에서만 사용합니다. */
+html[data-mode]{color-scheme:light}
+html[data-mode] body{background:var(--body-bg);color:var(--text)}
+
+/* 1. 흑 + 백 */
+html[data-mode="k-w"]{--body-bg:var(--mi-01);--surface:var(--mi-02);--panel-bg:var(--mi-01);--ink:#fff;--text:#fff;--muted:var(--mi-07);--line:var(--mi-04);--bg-soft:var(--mi-02);--green:#fff;--hover:#fff;--green-dark:#fff;--on-accent:var(--mi-01);color-scheme:dark}
+/* 2. 흑 + 연회 */
+html[data-mode="k-lg"]{--body-bg:var(--mi-01);--surface:var(--mi-02);--panel-bg:var(--mi-01);--ink:var(--mi-08);--text:var(--mi-07);--muted:var(--mi-06);--line:var(--mi-03);--bg-soft:var(--mi-02);--green:var(--mi-07);--hover:var(--mi-07);--green-dark:var(--mi-07);--on-accent:var(--mi-01);color-scheme:dark}
+/* 3. 백 + 진회 */
+html[data-mode="w-dg"]{--body-bg:#fff;--surface:var(--mi-09);--panel-bg:#fff;--ink:var(--mi-02);--text:var(--mi-03);--muted:var(--mi-04);--line:var(--mi-07);--bg-soft:var(--mi-09);--green:var(--mi-03);--hover:var(--mi-03);--green-dark:var(--mi-02);--on-accent:#fff}
+/* 4. 흑 + 네온그린 */
+html[data-mode="k-ng"]{--body-bg:var(--mi-01);--surface:var(--mi-02);--panel-bg:var(--mi-01);--ink:var(--mi-neon);--text:var(--mi-neon);--muted:var(--mi-olive);--line:var(--mi-03);--bg-soft:var(--mi-02);--green:var(--mi-fresh);--hover:var(--mi-fresh);--green-dark:var(--mi-neon);--on-accent:var(--mi-01);color-scheme:dark}
+/* 5. 백 + 선록~그린 */
+html[data-mode="w-g"]{--body-bg:#fff;--surface:var(--mi-09);--panel-bg:#fff;--ink:var(--mi-01);--text:var(--mi-02);--muted:var(--mi-04);--line:var(--mi-leaf);--bg-soft:var(--mi-09);--green:var(--mi-leaf);--hover:var(--mi-leaf);--green-dark:var(--mi-01);--on-accent:var(--mi-01)}
+/* 6. 진회~연회 + 선록·그린 */
+html[data-mode="dg-g"]{--body-bg:var(--mi-03);--surface:var(--mi-02);--panel-bg:var(--mi-03);--ink:var(--mi-09);--text:var(--mi-08);--muted:var(--mi-07);--line:var(--mi-04);--bg-soft:var(--mi-02);--green:var(--mi-fresh);--hover:var(--mi-fresh);--green-dark:var(--mi-neon);--on-accent:var(--mi-01);color-scheme:dark}
+
+html[data-mode] :is(.book,footer,.page,.page-head,.tabs,.sec,.collection,.store){background:var(--body-bg);color:var(--text)}
+html[data-mode] :is(.book-foot,.book-card,.more-btn,.ev,.ev .btn-sm,.ev .tags span,.card,.row,.info-card,.visit-card){background:var(--surface);color:var(--text)}
+html[data-mode] .collection,html[data-mode] .book-foot{background:var(--bg-soft)}
+html[data-mode] .notice-box{background:var(--body-bg);color:var(--text)}
+html[data-mode] :is(.more-btn,.ev .btn-sm,.notice-box li,.card,.row,.visit-list li,.exh-meta,footer,.ft){border-color:var(--line)}
+html[data-mode] :is(h1,h2,h3,h4,h5,.sec-title,.exh-info h3,.exh-meta li b,.book-card .txt h3,.ev h3,.prod b,.col-card h4,.ft address b,.notice-box h3){color:var(--ink)}
+html[data-mode] :is(.exh-desc,.col-card p,.book-card .txt p,.book-card .txt h3 small,.ev p,.prod h4,.notice-box li,.notice-box li em,.ft address,.ft-links,.sns a,.arrow,.sec-title span,.book .sec-title,.sec-sub,.visit-list li,.visit-list li span){color:var(--text)}
+html[data-mode] .more-btn::after{filter:invert(1)}
+html[data-mode="w-dg"] .more-btn::after,html[data-mode="w-g"] .more-btn::after{filter:none}
+html[data-mode] :is(.more-btn:hover,.ev .btn-sm:hover){background:var(--hover);border-color:var(--hover);color:var(--on-accent)}
+html[data-mode] .more-btn:hover::after{filter:none}
+html[data-mode] .ft-logo img{filter:brightness(0) invert(1)}
+html[data-mode="w-dg"] .ft-logo img,html[data-mode="w-g"] .ft-logo img{filter:none}
+html[data-mode] .quick{background:var(--body-bg)}
+html[data-mode] .quick span{color:var(--text)}
+html[data-mode] .quick b{color:var(--green)}
+html[data-mode] .hero::after{background:rgba(0,0,0,.55)}
+html[data-mode] .gnb-sub{background:var(--body-bg);border-top-color:var(--green)}
+html[data-mode] header.fixed{background:var(--body-bg)}
+html[data-mode] :is(.ev,.book-card,.notice-box,.col-card .img,.prod .img){outline:1px solid var(--line)}
+html[data-mode] :is(.to-top:hover,.hero-ctrl .circ:hover){color:var(--on-accent)}
+html[data-mode] .set-panel{box-shadow:-1px 0 0 var(--line)}
+html[data-mode] .side-quick,html[data-mode] .set-fab{border-color:var(--green)}
+html[data-mode] .side-quick a:hover{background:var(--green);color:var(--on-accent)}
+html[data-mode] .set-fab{background:var(--body-bg);color:var(--ink)}
+html[data-mode] .hero{color:#fff}
+html[data-mode] .hero :is(h1,p,span,b){color:#fff}
+html[data-mode] .quick b{color:var(--green)}

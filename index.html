@@ -6,7 +6,7 @@
 <title>부산현대미술관 | Museum of Contemporary Art Busan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#111;
@@ -14,7 +14,7 @@
     --muted:#888;
     --line:#e3e3e3;
     --bg-soft:#f4f4f4;
-    --green:#3fb34f;
+    --green:#39b034;
     --green-dark:#1f7a2e;
     --dark:#141414;
     --hover:#39b034;
@@ -25,20 +25,20 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{font-family:var(--font);color:var(--text);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   img{display:block;width:100%;height:100%;object-fit:cover}
   a{color:inherit;text-decoration:none}
   ul{list-style:none}
   button{font-family:inherit;cursor:pointer;border:0;background:none}
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 40px}
-  .en{font-family:'Montserrat',sans-serif}
+  .en{font-family:var(--font)}
   .ph{background:#ddd linear-gradient(135deg,#e6e6e6,#cfcfcf)}
 
   /* ---------- common section head ---------- */
   .sec{padding:120px 0}
   .sec-head{position:relative;text-align:center;margin-bottom:56px}
-  .sec-title{font-family:'Montserrat',sans-serif;font-size:40px;font-weight:800;color:var(--ink);letter-spacing:-.5px;line-height:1.2}
-  .sec-title span{color:#9a9a9a;font-weight:600}
+  .sec-title{font-family:var(--font);font-size:40px;font-weight:800;color:var(--ink);letter-spacing:-.5px;line-height:1.2}
+  .sec-title span{color:#9a9a9a;font-weight:500;font-size:.4em;letter-spacing:.2px;margin-left:10px;vertical-align:middle}
   .sec-sub{font-size:14px;color:var(--muted);margin-top:10px;letter-spacing:.5px}
   .more-btn{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 18px;border:1px solid #cfcfcf;border-radius:30px;font-size:12px;color:#555;background:#fff;transition:.25s}
   .more-btn::after{content:"";width:18px;height:18px;border-radius:50%;border:1px solid #999;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2.4'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E") center/10px no-repeat}
@@ -69,7 +69,7 @@
   .logo{display:flex;align-items:center;gap:10px;color:#fff}
   .logo img{width:auto;height:54px;object-fit:contain;transition:height .3s}
   header.fixed .logo img{height:44px}
-  .logo-mark{position:relative;width:86px;height:48px;font-family:'Montserrat',sans-serif;font-weight:800;line-height:1}
+  .logo-mark{position:relative;width:86px;height:48px;font-family:var(--font);font-weight:800;line-height:1}
   .logo-mark .m{position:absolute;left:14px;top:0;font-size:20px}
   .logo-mark .b{position:absolute;left:0;bottom:4px;font-size:22px;letter-spacing:-1px}
   .logo-mark .c{position:absolute;right:0;bottom:2px;width:22px;height:22px;border:2px solid currentColor;border-radius:50%;font-size:11px;display:grid;place-items:center}
@@ -88,7 +88,7 @@
   .gnb-sub a::after{display:none}
   .gnb-sub a:hover,.gnb-sub a:focus-visible{color:var(--green);background:rgba(255,255,255,.08)}
   .util{display:flex;align-items:center;gap:22px;font-size:13px}
-  .util .lang{font-family:'Montserrat',sans-serif;font-weight:600;letter-spacing:1px}
+  .util .lang{font-family:var(--font);font-weight:600;letter-spacing:1px}
   .burger{width:26px;height:18px;position:relative}
   .burger i{position:absolute;left:0;right:0;height:2px;background:#fff}
   .burger i:nth-child(1){top:0}.burger i:nth-child(2){top:8px}.burger i:nth-child(3){top:16px}
@@ -97,22 +97,13 @@
   .hero-copy .kicker{font-size:16px;font-weight:500;opacity:.9;letter-spacing:.5px}
   .hero-copy h1{font-size:clamp(36px,4.4vw,64px);font-weight:700;letter-spacing:-1.5px;line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.25)}
   .hero-line{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:10px}
-  .set-btn{flex:none;width:75px;height:75px;margin:-15px 0;border-radius:50%;border:1.5px solid rgba(255,255,255,.8);background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center;transition:background .25s}
-  .set-btn svg{width:31px;height:31px;animation:spin 18s linear infinite;filter:drop-shadow(0 1px 6px rgba(0,0,0,.3))}
-  .set-btn svg *{stroke-width:1px;vector-effect:non-scaling-stroke}
-  .set-btn svg path{fill-rule:evenodd;transition:fill .25s}
-  .set-btn:hover svg path,.set-btn[aria-expanded="true"] svg path{fill:var(--hover)}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .set-btn:hover,.set-btn[aria-expanded="true"]{background:rgba(255,255,255,.3)}
-  .set-btn:focus-visible,.set-panel button:focus-visible,.set-panel a:focus-visible{outline:2px solid var(--green);outline-offset:3px}
-  .hero-ctrl{position:absolute;z-index:6;right:var(--hero-inset);bottom:93px;display:flex;align-items:center;gap:12px;font-family:'Montserrat',sans-serif;font-size:12px}
+  .hero-ctrl{position:absolute;z-index:6;right:var(--hero-inset);bottom:93px;display:flex;align-items:center;gap:12px;font-family:var(--font);font-size:12px}
   .hero-ctrl .en{min-width:52px;text-align:center;opacity:.9}
   .hero-ctrl .circ{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.7);color:#fff;display:grid;place-items:center;transition:.25s}
   .hero-ctrl .circ svg{width:16px;height:16px}
   .hero-ctrl .circ:hover{background:var(--hover);border-color:var(--hover)}
 
   .hero-tag{position:absolute;z-index:6;left:var(--hero-inset);bottom:110px}
-  .hero-tag em{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(26px,2.2vw,36px);line-height:1.1;opacity:.92}
   .hero-tag p{font-size:16px;font-weight:500;margin-top:14px;text-shadow:0 1px 10px rgba(0,0,0,.25)}
   .hero-prog{display:flex;gap:4px;margin-top:22px}
   .hero-prog i{position:relative;width:116px;height:2px;background:rgba(255,255,255,.35);overflow:hidden}
@@ -154,7 +145,7 @@
   .exh-main::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.75),transparent 55%)}
   .exh-main .cap{position:absolute;left:28px;bottom:26px;right:28px;z-index:2;color:#fff}
   .exh-main .cap small{font-size:11px;opacity:.7;letter-spacing:1px}
-  .exh-main .cap h3{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:600;margin:4px 0}
+  .exh-main .cap h3{font-family:var(--font);font-size:16px;font-weight:600;margin:4px 0}
   .exh-main .cap p{font-size:12px;opacity:.75}
   .exh-main.is-poster{background:#fff;border:1px solid #e3e6e2}
   .exh-main.is-poster::after{display:none}
@@ -163,7 +154,7 @@
   .exh-info h3 a{color:inherit;transition:color .2s}
   .exh-info h3 a:hover{color:var(--green)}
   .exh-info h3{font-size:30px;font-weight:700;color:var(--ink);display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
-  .exh-info h3 small{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;color:var(--muted)}
+  .exh-info h3 small{font-family:var(--font);font-size:13px;font-weight:500;color:var(--muted)}
   .exh-meta{margin:22px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:16px 0}
   .exh-meta li{display:grid;grid-template-columns:70px 1fr;font-size:13px;padding:3px 0}
   .exh-meta li b{color:var(--ink);font-weight:600}
@@ -173,7 +164,7 @@
   .thumb .img img{transition:transform .5s}
   .thumb:hover .img img{transform:scale(1.06)}
   .thumb small{display:block;font-size:10px;color:var(--muted);margin-top:10px;letter-spacing:.5px}
-  .thumb h4{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--ink);line-height:1.35}
+  .thumb h4{font-family:var(--font);font-size:13px;font-weight:700;color:var(--ink);line-height:1.35}
   .side-arrows{position:absolute;left:-70px;right:-70px;top:50%;transform:translateY(-50%);display:flex;justify-content:space-between;pointer-events:none}
   .side-arrows .arrow{pointer-events:auto}
 
@@ -187,15 +178,12 @@
   .col-card .img img{transition:transform .6s}
   .col-card:hover .img img{transform:scale(1.07)}
   .col-card .cat{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);margin-top:18px;padding-bottom:10px;border-bottom:1px solid var(--line)}
-  .col-card .cat::before{content:"";width:12px;height:12px;background:var(--hover)}
   .col-card h4{font-size:18px;font-weight:700;color:var(--ink);margin:12px 0 8px}
   .col-card p{font-size:13px;color:#777;line-height:1.75;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 
   /* ---------- book ---------- */
   .book{background:#fff;padding-top:140px;padding-bottom:0}
   .book-foot{display:flow-root;background:#f7f7f7;padding-bottom:110px}
-  .book .sec-title{color:#8a8a8a}
-  .book .sec-title b{color:var(--ink)}
   .book-band{height:420px;position:relative;overflow:hidden}
   .book-band::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.4) 45%,rgba(0,0,0,.08) 100%);pointer-events:none}
   .book-card{position:relative;margin-top:-220px;display:grid;grid-template-columns:1fr 1fr;background:#fff;box-shadow:0 30px 60px rgba(0,0,0,.08)}
@@ -217,8 +205,7 @@
   .ev .txt{padding:36px 44px}
   .ev .tags{display:flex;gap:10px;margin-bottom:14px}
   .ev .tags span{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;padding:4px 10px;background:#fff;border-radius:3px}
-  .ev .tags span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ink)}
-  .ev h3{font-family:'Montserrat','Noto Sans KR',sans-serif;font-size:20px;font-weight:800;color:var(--ink);line-height:1.35}
+  .ev h3{font-family:var(--font);font-size:20px;font-weight:800;color:var(--ink);line-height:1.35}
   .ev p{font-size:13px;color:#777;margin:14px 0 20px;max-width:640px}
   .ev .btn-sm{display:inline-block;font-size:11px;padding:5px 14px;border:1px solid #bbb;border-radius:20px;background:#fff;transition:.2s}
   .ev .btn-sm:hover{background:var(--hover);color:#fff;border-color:var(--hover)}
@@ -237,7 +224,7 @@
   .bleed::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.32) 40%,rgba(0,0,0,.08) 75%,rgba(0,0,0,0) 100%);pointer-events:none}
   .bleed .bleed-cap{position:absolute;z-index:2;left:0;right:0;bottom:clamp(18px,2.4vw,32px);max-width:1240px;margin:0 auto;padding:0 max(24px,env(safe-area-inset-left,0px));text-align:center;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.35)}
   .bleed-cap .bc-artist{font-size:clamp(13px,1.1vw,15px);font-weight:600;letter-spacing:.2px;opacity:.95}
-  .bleed-cap .bc-artist span{font-family:'Montserrat',sans-serif;font-weight:500;opacity:.75;margin-left:6px}
+  .bleed-cap .bc-artist span{font-family:var(--font);font-weight:500;opacity:.75;margin-left:6px}
   .bleed-cap h3{font-size:16px;font-weight:400;letter-spacing:-.2px;line-height:1.5}
   .bleed-cap .bc-desc{margin-top:8px;font-size:clamp(12px,1vw,14px);opacity:.85}
 
@@ -253,7 +240,7 @@
   /* ---------- goods banner ---------- */
   .goods{height:clamp(220px,29.4vw,500px);position:relative;overflow:hidden;display:grid;place-items:center}
   .goods img{position:absolute;inset:0;filter:grayscale(1) contrast(1.05) brightness(.6)}
-  .goods h2{position:relative;font-family:'Montserrat',sans-serif;font-size:clamp(20px,2.2vw,30px);font-weight:700;color:#fff;letter-spacing:3px;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+  .goods h2{position:relative;font-family:var(--font);font-size:clamp(20px,2.2vw,30px);font-weight:700;color:#fff;letter-spacing:3px;text-shadow:0 2px 14px rgba(0,0,0,.4)}
 
   /* ---------- store ---------- */
   .store .sec-head{margin-bottom:24px}
@@ -271,11 +258,11 @@
   .store-arrows .arrow{pointer-events:auto}
 
   /* ---------- notice ---------- */
-  .notice{position:relative;height:500px;overflow:hidden;margin-top:120px}
+  .notice{position:relative;height:500px;overflow:hidden;margin-top:0}
   .notice > img{position:absolute;inset:0}
   .notice .wrap{position:relative;height:100%;display:flex;align-items:center}
   .notice-box{width:440px;background:rgba(255,255,255,.93);padding:40px 40px 34px;box-shadow:0 20px 50px rgba(0,0,0,.12)}
-  .notice-box h3{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:var(--ink);margin-bottom:18px}
+  .notice-box h3{font-family:var(--font);font-size:22px;font-weight:800;color:var(--ink);margin-bottom:18px}
   .notice-box li{display:flex;gap:10px;font-size:13px;color:#555;padding:9px 0;border-bottom:1px solid #e8e8e8}
   .notice-box li:hover{color:var(--ink)}
   .notice-box li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--green);margin-top:9px;flex:none}
@@ -300,7 +287,26 @@
   .news button:hover{background:var(--green-dark)}
   .ft-logo{display:flex;align-items:center;gap:12px;justify-content:flex-end;margin-top:60px;color:var(--ink)}
   .ft-logo img{width:auto;height:64px;max-width:100%;object-fit:contain}
-  .copy{background:var(--dark);color:#888;font-size:11px;text-align:center;padding:16px 0;margin-top:60px;font-family:'Montserrat',sans-serif}
+  .copy{background:var(--dark);color:#888;font-size:11px;text-align:center;padding:16px 0;margin-top:60px;font-family:var(--font)}
+
+  /* ---------- 관람 안내 (미술관 소개 + 기본 정보) ---------- */
+  .visit{padding:100px 0 90px;background:#fff}
+  .about-row{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-bottom:56px;align-items:start}
+  .about-row p{font-size:14.5px;color:#555;line-height:1.95;margin-bottom:18px}
+  .about-row p:last-child{margin-bottom:0}
+  .visit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .visit-card{background:var(--bg-soft);padding:30px 30px 26px}
+  .visit-card h3{font-size:17px;font-weight:700;color:var(--ink);padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid var(--ink)}
+  .visit-list li{font-size:13.5px;color:#555;line-height:1.75;padding:4px 0}
+  .visit-list li b{display:inline-block;min-width:64px;color:var(--ink);font-weight:700}
+  .visit-list li small{display:block;font-size:12.5px;color:var(--muted)}
+  .visit-card .more-btn{margin-top:18px}
+  .book-meta{margin-top:22px;border-top:1px solid var(--line)}
+  .book-meta li{display:grid;grid-template-columns:78px 1fr;gap:8px;font-size:13px;color:#666;padding:9px 0;border-bottom:1px solid var(--line)}
+  .book-meta li b{color:var(--ink);font-weight:700}
+  .book-card .txt .book-meta + .more-btn{margin-top:22px}
+  @media (max-width:1024px){.about-row{grid-template-columns:1fr;gap:28px}.visit-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:680px){.visit{padding:70px 0 60px}.visit-grid{grid-template-columns:1fr}}
 
   /* ---------- reveal ---------- */
   .rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
@@ -333,8 +339,6 @@
     .sec-head.right{text-align:center}
     :root{--head-side:16px}
     .hero-copy{padding:0 36px}
-    .set-btn{position:absolute;right:36px;bottom:100%;margin:0 0 14px;width:56px;height:56px}
-    .set-btn svg{width:24px;height:24px}
     .quick li{font-size:12px}
     .quick a{flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;padding:0 12px;height:64px}
     .quick span{font-size:11px;max-width:100%}
@@ -373,63 +377,8 @@
   .to-top.show{opacity:1;visibility:visible;transform:none}
   .to-top:hover{background:var(--hover);border-color:var(--hover)}
   .to-top svg{width:16px;height:16px}
-  .to-top span{font:600 9px/1 Montserrat,sans-serif;letter-spacing:.08em}
+  .to-top span{font:600 9px/1 var(--font);letter-spacing:.08em}
 
-  /* ---------- display settings panel ---------- */
-  .set-panel{position:fixed;z-index:100;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--panel-bg,#fff);color:var(--text);
-    box-shadow:-20px 0 60px rgba(0,0,0,.18);display:flex;flex-direction:column;padding:34px 32px 30px;overflow-y:auto;
-    transform:translateX(100%);visibility:hidden;transition:transform .45s cubic-bezier(.22,.8,.26,1),visibility .45s}
-  .set-panel.open{transform:none;visibility:visible}
-  .set-close{position:absolute;top:22px;right:22px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--ink);transition:background .2s}
-  .set-close:hover{background:var(--bg-soft)}
-  .set-close svg{width:20px;height:20px}
-  .set-panel h2{font-size:17px;font-weight:700;color:var(--ink);padding:6px 44px 26px 0;border-bottom:1px solid var(--line)}
-  .set-desc{font-size:13px;color:var(--muted);margin:26px 0 8px;line-height:1.7}
-  .set-group{padding:22px 0;border-bottom:1px solid var(--line)}
-  .set-group h3{font-size:12px;font-weight:700;color:var(--ink);letter-spacing:.5px;margin-bottom:14px}
-  .set-size{display:flex;align-items:center;gap:10px}
-  .set-size button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);color:var(--ink);font-weight:700;line-height:1;transition:.2s}
-  .set-size button:nth-child(1){font-size:13px}
-  .set-size button:nth-child(2){font-size:17px}
-  .set-size button:nth-child(3){font-size:22px}
-  .set-mode{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .set-mode button{display:flex;align-items:center;gap:10px;height:46px;padding:0 16px;border:1px solid var(--line);border-radius:30px;font-size:13px;font-weight:500;color:var(--ink);transition:.2s}
-  .set-mode button i{width:14px;height:14px;border-radius:50%;flex:none;border:1px solid rgba(128,128,128,.6)}
-  .set-size button:hover,.set-mode button:hover{border-color:var(--ink)}
-  .set-size button[aria-pressed="true"],.set-mode button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-  .set-links{display:flex;flex-wrap:wrap;gap:8px}
-  .set-links a{font-size:12px;padding:6px 14px;border:1px solid var(--line);border-radius:20px;color:var(--ink);transition:.2s}
-  .set-links a:hover{background:var(--hover);border-color:var(--hover);color:#fff}
-  .set-reset{margin-top:auto;align-self:flex-start;font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:3px;padding:20px 0 0}
-  .set-reset:hover{color:var(--ink)}
-
-  /* text size: scale page content, keep hero at one screen */
-  body > section, body > footer{zoom:var(--fz,1)}
-  .hero{height:calc(100vh / var(--fz,1))}
-
-  /* ---------- display modes ---------- */
-  html:is([data-mode="dark"],[data-mode="eco"]){--ink:#f3f3f3;--text:#d2d2d2;--muted:#9c9c9c;--line:#343434;--bg-soft:#1d1d1d;--panel-bg:#191919;--surface:#1a1a1a;--body-bg:#111;color-scheme:dark}
-  html[data-mode="contrast"]{--ink:#fff;--text:#fff;--muted:#fff;--line:#fff;--bg-soft:#000;--panel-bg:#000;--surface:#000;--body-bg:#000;--green:#ffe600;--hover:#ffe600;--green-dark:#fff;color-scheme:dark}
-  html[data-mode] body,html[data-mode] .book,html[data-mode] footer{background:var(--body-bg)}
-  html[data-mode] :is(.book-foot,.book-card,.more-btn,.ev .btn-sm,.ev .tags span,.news input){background:var(--surface);color:var(--text)}
-  html[data-mode] .notice-box{background:rgba(20,20,20,.94)}
-  html[data-mode] :is(.more-btn,.ev .btn-sm,.news input,.notice-box li){border-color:var(--line)}
-  html[data-mode] :is(.exh-desc,.col-card p,.book-card .txt p,.book-card .txt h3 small,.ev p,.prod h4,.notice-box li,.notice-box li em,.ft address,.ft-links,.sns a,.arrow,.sec-title span,.book .sec-title){color:var(--text)}
-  html[data-mode] .more-btn::after{filter:invert(1)}
-  html[data-mode] .more-btn:hover,html[data-mode] .ev .btn-sm:hover{background:var(--hover);border-color:var(--hover);color:#fff}
-  html[data-mode] .ft-logo img{filter:brightness(0) invert(1)}
-  html[data-mode] .set-panel{box-shadow:-1px 0 0 var(--line)}
-
-  html[data-mode="eco"] *,html[data-mode="eco"] *::before,html[data-mode="eco"] *::after{animation:none!important;transition:none!important}
-  html[data-mode="eco"] img{filter:grayscale(.6) brightness(.8)}
-  html[data-mode="eco"] .hero-grid .p{transform:translate(-50%,-50%)}
-
-  html[data-mode="contrast"] .hero::after{background:rgba(0,0,0,.6)}
-  html[data-mode="contrast"] .quick{background:#000}
-  html[data-mode="contrast"] :is(.more-btn:hover,.ev .btn-sm:hover,.news button,.set-links a:hover,.hero-ctrl .circ:hover,.to-top:hover){color:#000}
-  html[data-mode="contrast"] :is(.ev,.book-card,.notice-box,.col-card .img,.prod .img){outline:1px solid #fff}
-  html[data-mode="contrast"] :is(.gnb a,.ft-links a,.notice-box li a){text-decoration:underline;text-underline-offset:4px}
-  html[data-mode="contrast"] .ev .img .play{background:#fff}
 
   /* ---------- AI character button ---------- */
   .ai-btn{position:fixed;z-index:90;right:17px;bottom:102px;width:70px;height:64px;transition:transform .25s;filter:drop-shadow(0 0 1.5px rgba(255,255,255,.95)) drop-shadow(0 3px 8px rgba(0,0,0,.3))}
@@ -485,6 +434,8 @@
   });
 </script>
 </style>
+<link rel="stylesheet" href="moca-common.css">
+<script src="moca-common.js" defer></script>
 </head>
 <body>
 
@@ -496,12 +447,12 @@
       <nav class="gnb">
         <!-- 메뉴 구성(안) 1Depth · 2Depth 기준 -->
         <div class="gnb-item">
-          <a href="#">관람·예약 안내</a>
+          <a href="#visit">관람·예약 안내</a>
           <ul class="gnb-sub">
-            <li><a href="#">관람 안내</a></li>
+            <li><a href="#visit">관람 안내</a></li>
             <li><a href="https://reserve.busan.go.kr/applcnt/searchProgrm?siteNo=&amp;searchGubun=ALL&amp;searchText=%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80" target="_blank" rel="noopener" title="새 창: 부산시 통합예약시스템">온라인 예약</a></li>
-            <li><a href="#">오시는 길</a></li>
-            <li><a href="#">공간 &amp; 편의시설</a></li>
+            <li><a href="#visit-way">오시는 길</a></li>
+            <li><a href="#visit-space">공간 &amp; 편의시설</a></li>
           </ul>
         </div>
         <div class="gnb-item">
@@ -538,7 +489,7 @@
         </div>
         <a href="#store">뮤지엄숍</a>
         <div class="gnb-item">
-          <a href="#">미술관 소개</a>
+          <a href="#about">미술관 소개</a>
           <ul class="gnb-sub">
             <li><a href="#">인사말</a></li>
             <li><a href="#">연혁</a></li>
@@ -566,17 +517,13 @@
     <p class="kicker">부산현대미술관 · 을숙도</p>
     <div class="hero-line">
     <h1>강과 바다가 만나는 자리</h1>
-    <button class="set-btn" id="setBtn" type="button" aria-label="화면 설정 열기" aria-expanded="false" aria-controls="setPanel">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1zM15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
-    </button>
     </div>
   </div>
 
   <div class="hero-grid" aria-hidden="true"></div>
 
   <div class="hero-tag">
-    <em>where river meets sea</em>
-    <p>자연과 인간, 뉴미디어</p>
+    <p>자연, 뉴미디어, 인간</p>
     <div class="hero-prog" id="heroProg"></div>
   </div>
   <div class="hero-ctrl">
@@ -588,10 +535,62 @@
 
   <div class="quick">
     <ul>
-      <li><a href="#"><b>관람 안내</b><span>미술관 이용 안내</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></li>
-      <li><a href="#"><b>온라인 예약</b><span>방문을 준비하세요</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></li>
-      <li><a href="#"><b>오시는 길</b><span>을숙도에서 만나요</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></li>
+      <li><a href="#visit"><b>관람 안내</b><span>화–일 10:00–18:00</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://reserve.busan.go.kr/applcnt/searchProgrm?siteNo=&amp;searchGubun=ALL&amp;searchText=%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80" target="_blank" rel="noopener" title="새 창: 부산시 통합예약시스템"><b>온라인 예약</b><span>부산시 통합예약시스템 연결</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></li>
+      <li><a href="#visit-way"><b>오시는 길</b><span>지하철 1호선 하단역 3번 출구</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></li>
     </ul>
+  </div>
+</section>
+
+<!-- ===================== VISIT (미술관 소개 · 관람 안내) ===================== -->
+<section class="visit" id="visit">
+  <span id="about" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="sec-title">관람 안내</h2>
+    </div>
+    <div class="about-row rv">
+      <div>
+        <p>천연기념물 제179호 을숙도에 위치한 부산현대미술관은 환경·생태적 가치의 지속 가능성을 지향하는 부산광역시 공립 미술관입니다. 부지 29,900㎡, 연면적 15,586㎡, 전시 공간 5,910㎡ 규모로 2018년 6월 16일 개관하여 서부산권 문화 플랫폼 역할을 수행하고 있습니다.</p>
+        <p>급변하는 21세기 현대 사회에서 부산현대미술관은 뉴미디어를 포함한 다양한 매체 기반의 동시대 미술을 중심으로 지역과 세계를 밀접하게 연결하는 다각적인 예술적 실천을 이어가며, 미래의 기술 문명 속에서 자연, 인간, 비인간이 상호 긍정적인 관계를 맺으며 공존하는 역동적인 예술의 장을 제시하고자 합니다.</p>
+      </div>
+      <div>
+        <p>부산현대미술관은 동시대 흐름의 예술 동향 조사 연구와 담론 생산을 선도하기 위해 작품 수집 및 전시, 학술, 국제 협력 프로그램들을 운영하며, 다양성과 포용성이라는 미술관의 사회적 역할을 실현하기 위해 다양한 계층을 대상으로 한 교육 및 문화 프로그램들을 운영하며, 일반 관람객과 미술 전문가 모두와 소통하는 미술관을 지향합니다.</p>
+      </div>
+    </div>
+    <div class="visit-grid rv">
+      <div class="visit-card">
+        <h3>관람 시간 · 휴관일</h3>
+        <ul class="visit-list">
+          <li><b>관람 시간</b>화요일–일요일 10:00–18:00<small>전시 종료 30분 전 입장 마감</small></li>
+          <li><b>휴관일</b>월요일, 1월 1일<small>월요일이 공휴일일 경우 그다음 날 휴관 · 전시 준비 기간은 누리집에서 안내</small></li>
+          <li><b>관람 요금</b>무료<small>기획전·특별전 등 일부 전시 제외</small></li>
+        </ul>
+        <a href="https://reserve.busan.go.kr/applcnt/searchProgrm?siteNo=&amp;searchGubun=ALL&amp;searchText=%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80" target="_blank" rel="noopener" class="more-btn" title="새 창: 부산시 통합예약시스템">온라인 예약</a>
+      </div>
+      <div class="visit-card" id="visit-way">
+        <h3>오시는 길</h3>
+        <ul class="visit-list">
+          <li><b>지하철</b>1호선 하단역 3번 출구<small>버스로 환승(2개 정류소)</small></li>
+          <li><b>시내버스</b>3, 55, 58, 58-2, 122, 124, 128-1, 161, 171, 172</li>
+          <li><b>마을버스</b>강서구7, 9-1, 12, 12-1, 13, 15, 15-1, 20, 21</li>
+          <li><b>주차</b>매일 09:00–19:00<small>10분당 100원 / 1일 최대 2,400원</small></li>
+        </ul>
+        <a href="#" class="more-btn">오시는 길 자세히</a>
+      </div>
+      <div class="visit-card" id="visit-space">
+        <h3>공간 &amp; 편의시설</h3>
+        <ul class="visit-list">
+          <li><b>지하 1층</b>전시실 1–3, 책그림섬(children's library), 수유실</li>
+          <li><b>1층</b>전시실 4, 매표·안내, 물품보관함, 뮤지엄숍(museum shop), 카페(cafe), 을숙마당</li>
+          <li><b>2층</b>전시실 5, 강의실 1·2 / 창작실 1·2 (labs &amp; lecture rooms)</li>
+          <li><b>3층</b>모카이브(mocarchive)</li>
+          <li><b>옥상</b>옥상 레스토랑(rooftop restaurant)</li>
+          <li><b>관람 편의</b>유아차·휠체어 대여는 안내데스크 문의</li>
+        </ul>
+        <a href="#" class="more-btn">층별안내</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -600,8 +599,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <a href="exhibition.html#detail/re-saesae-chair" class="more-btn">전시 더보기</a>
-      <h2 class="sec-title">Exhibition</h2>
-      <p class="sec-sub">부산현대미술관 전시를 소개합니다</p>
+      <h2 class="sec-title">전시</h2>
     </div>
 
     <div class="exh-body rv">
@@ -672,80 +670,21 @@
   </div>
 </section>
 
-<!-- ===================== COLLECTION ===================== -->
-<section class="sec collection" id="collection">
+<!-- ===================== NOTICE ===================== -->
+<section class="notice" id="notice">
+  <img src="images/notice-bg.webp" alt="">
   <div class="wrap">
-    <div class="sec-head rv">
-      <a href="#" class="more-btn">소장품 더보기</a>
-      <h2 class="sec-title">Collection</h2>
-      <p class="sec-sub">부산현대미술관 대표 소장품</p>
+    <div class="notice-box rv">
+      <h3>공지사항</h3>
+      <ul>
+        <li>2024 하반기 정기 휴관 안내 <em>10.24</em></li>
+        <li>11월 어린이 교육 프로그램 참가자 모집 <em>10.18</em></li>
+        <li>미술관 주차장 이용 시간 변경 안내 <em>10.11</em></li>
+        <li>도슨트 해설 운영 일정 안내 <em>10.04</em></li>
+        <li>뮤지엄 스토어 리뉴얼 오픈 안내 <em>09.27</em></li>
+      </ul>
+      <a href="#" class="more-btn">공지 더보기</a>
     </div>
-    <div class="col-wrap rv">
-      <div class="side-arrows" style="top:36%">
-        <button class="arrow" id="cPrev" aria-label="이전"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 4l-8 8 8 8"/></svg></button>
-        <button class="arrow" id="cNext" aria-label="다음"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 4l8 8-8 8"/></svg></button>
-      </div>
-      <div class="col-list" id="colTrack">
-        <a href="#" class="col-card">
-          <div class="img ph"><img src="images/col-sculpture.jpg" alt="고리 모양 틀 안에서 몸을 웅크린 인물을 표현한 청동 조각" loading="lazy"></div>
-          <div class="cat">COLLECTION · 조각</div>
-          <h4>웅크린 몸 : 균형의 순간</h4>
-          <p>휘어진 고리 안에서 몸을 둥글게 말아 쥔 인물을 청동으로 빚은 조각입니다. 푸른 녹과 붉은 표면이 어우러져, 무게와 긴장이 맞서는 한순간을 보여 줍니다.</p>
-        </a>
-        <a href="#" class="col-card">
-          <div class="img ph"><img src="images/col-painting.jpg" alt="파스텔 색 붓질 위에 손글씨와 풀잎을 그린 직물 회화" loading="lazy"></div>
-          <div class="cat">COLLECTION · 회화</div>
-          <h4>풀잎 사이의 말 : 손글씨 풍경</h4>
-          <p>부드러운 직물 위에 겹겹이 쌓은 파스텔 색 붓질과 손글씨, 풀잎 선이 어우러진 회화입니다. 일상의 말과 자연의 리듬이 하나의 풍경으로 펼쳐집니다.</p>
-        </a>
-        <a href="#" class="col-card">
-          <div class="img ph"><img src="images/col-media.jpg" alt="어두운 전시장에 나란히 선 화면 속 끝없이 갈라진 흰 대지 영상" loading="lazy"></div>
-          <div class="cat">COLLECTION · 미디어아트</div>
-          <h4>갈라진 대지 : 끝없는 지평</h4>
-          <p>어두운 전시장에 나란히 놓인 다섯 개의 화면이 하나의 지평선으로 이어지는 영상 설치입니다. 끝없이 갈라진 흰 대지가 변화하는 지구의 풍경을 떠올리게 합니다.</p>
-        </a>
-        <a href="#" class="col-card">
-          <div class="img ph"><img src="images/col-video.jpg" alt="붉은 원형 단 위의 라운지 의자와 세 개의 화면으로 이루어진 영상 설치" loading="lazy"></div>
-          <div class="cat">COLLECTION · 영상 설치</div>
-          <h4>붉은 라운지 : 기대어 보는 도시</h4>
-          <p>붉은 원형 단 위의 의자에 기대어 세 개의 화면을 바라보는 영상 설치입니다. 관람객은 편안히 누운 채 도시의 건축과 풍경이 교차하는 이야기를 마주합니다.</p>
-        </a>
-        <a href="#" class="col-card">
-          <div class="img ph"><img src="images/col-install.jpg" alt="긴 흰 바닥 위에 파란 물결 조각들이 흩어진 설치 작품" loading="lazy"></div>
-          <div class="cat">COLLECTION · 설치</div>
-          <h4>푸른 물결 : 흰 길 위의 바다</h4>
-          <p>전시장을 가로지르는 긴 흰 길 위에 파란 물결 조각들을 흩어 놓은 설치 작품입니다. 작은 동물 오브제와 함께 걸으며 바다를 건너는 듯한 감각을 전합니다.</p>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== BOOK ===================== -->
-<section class="sec book" id="book">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <h2 class="sec-title"><b>Book</b>-Picture Island</h2>
-      <p class="sec-sub">책 그림 책방이 소개하는 이야기</p>
-    </div>
-  </div>
-  <div class="book-band ph"><img src="images/library-01.jpg" alt="책그림섬 원형 천장 서가"></div>
-  <div class="book-foot">
-  <div class="wrap">
-    <div class="book-card rv">
-      <div class="img ph book-fade" aria-roledescription="carousel" aria-label="책그림섬 사진">
-        <img class="on" src="images/library-02.jpg" alt="책그림섬 노란 원형 그림책 열람 공간">
-        <img src="images/hero-05.webp" alt="원형 서가와 계단식 좌석이 있는 책그림섬 전경" loading="lazy">
-        <img src="images/book-shelf-01.webp" alt="노란 바닥 위 나무 서가에 놓인 그림책들" loading="lazy">
-        <img src="images/book-shelf-02.webp" alt="계단 서가에 꽂힌 예술 도서와 그림책" loading="lazy">
-      </div>
-      <div class="txt">
-        <h3>책그림섬 <small>마음을 다지고, 동행을 키우고,<br>당신의 하루가 머무는 곳.</small></h3>
-        <p>책그림섬은 부산현대미술관 1층에 위치한 그림책 전문 도서 공간입니다. 국내외 그림책과 예술 도서를 자유롭게 열람할 수 있으며, 아이와 어른이 함께 머물며 이야기를 나누는 쉼터가 되어 줍니다. 계절마다 바뀌는 큐레이션 서가와 작가 연계 프로그램도 만나보세요.</p>
-        <a href="#" class="more-btn">자세히 보기</a>
-      </div>
-    </div>
-  </div>
   </div>
 </section>
 
@@ -753,8 +692,8 @@
 <section class="sec" id="events">
   <div class="wrap">
     <div class="sec-head right rv">
-      <a href="#" class="more-btn">행사 더보기</a>
-      <h2 class="sec-title"><span>Upcoming-</span>Events</h2>
+      <a href="#" class="more-btn">프로그램 더보기</a>
+      <h2 class="sec-title">예정 전시 · 프로그램</h2>
     </div>
     <div class="ev-list">
       <article class="ev rv">
@@ -788,56 +727,92 @@
   </div>
 </section>
 
-<!-- ===================== BLEED ===================== -->
-<section class="bleed ph" aria-roledescription="carousel" aria-label="부산현대미술관 전시장 풍경">
-  <img class="bl-img on" src="images/bleed-biennale.webp" alt="노란 불화 두 점과 나무 설치 작품이 놓인 부산현대미술관 1층 높은 전시장" data-cap="‘어둠에서 보기’를 주제로 한 2024 부산비엔날레가 열리는 부산현대미술관 1층 전시장" data-pos="50% 72%">
-  <img class="bl-img" src="images/bleed-postmodern-kids.webp" alt="나무 바닥 위 어린이 마네킹과 팝아트 벽화가 있는 전시장" data-cap="《포스트모던 어린이》, 2022–2023 · 나무 바닥과 흰 벽체, 팝아트적 전시 공간" data-pos="50% 62%" loading="lazy">
-  <img class="bl-img" src="images/bleed-ten-eyes.webp" alt="대형 기둥과 흰 벽, 오렌지색 전시대가 있는 넓은 전시장" data-cap="《열 개의 눈》, 2025 · 대형 기둥과 흰 벽, 오렌지색 전시대가 보이는 전시장" data-pos="50% 55%" loading="lazy">
-  <img class="bl-img" src="images/bleed-collecting-future.jpg" alt="흰 벽에 작은 사각 작품이 줄지어 걸리고 붉은 기둥 조각이 선 전시장" data-cap="《미래를 수집하기》 설치 전경 · 흰 전시 벽면과 조각이 놓인 넓은 전시 공간" data-pos="50% 50%" loading="lazy">
-  <img class="bl-img" src="images/bleed-rhino-unicorn.webp" alt="숲과 인물 실루엣을 그린 대형 흑백 벽화와 바닥에 기대 놓인 그림들" data-cap="《코뿔소와 유니콘》, 2026 · 대형 벽면 일러스트레이션을 활용한 전시장 내부" data-pos="50% 55%" loading="lazy">
-  <img class="bl-img" src="images/bleed-graybox.jpg" alt="검은 천장과 반사되는 바닥, 영상 화면들이 설치된 어두운 전시장" data-cap="《그레이박스 이후》, 2022 · 블랙 천장과 반사되는 바닥, 디지털 영상 설치 작품" data-pos="50% 58%" loading="lazy">
-  <div class="bleed-cap"><h3 aria-live="polite">‘어둠에서 보기’를 주제로 한 2024 부산비엔날레가 열리는 부산현대미술관 1층 전시장</h3></div>
-</section>
-
-<!-- ===================== TOGETHER ===================== -->
-<section class="sec" id="together">
+<!-- ===================== COLLECTION ===================== -->
+<section class="sec collection" id="collection">
   <div class="wrap">
     <div class="sec-head rv">
-      <a href="#" class="more-btn">참여 더보기</a>
-      <h2 class="sec-title">Museum<span> - Together</span></h2>
-      <p class="sec-sub">함께하는 미술관</p>
+      <a href="#" class="more-btn">소장품 더보기</a>
+      <h2 class="sec-title">소장품</h2>
     </div>
-    <div class="tg-main rv">
-      <div class="img ph"><img src="images/together-main.jpg" alt="전시 현수막이 걸린 부산현대미술관 외관"></div>
-      <div class="figcap"><span>미술관 소개</span><b>|</b><span>문화행사 · 체험프로그램 참여</span></div>
-    </div>
-    <div class="tg-sub">
-      <div class="rv">
-        <div class="img ph"><img src="images/together-01.jpg" alt="헤드폰을 쓰고 영상 작품을 감상하는 아이와 가족"></div>
-        <div class="figcap"><span>시민참여 프로그램</span><span>자세히보기 ›</span></div>
+    <div class="col-wrap rv">
+      <div class="side-arrows" style="top:36%">
+        <button class="arrow" id="cPrev" aria-label="이전"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 4l-8 8 8 8"/></svg></button>
+        <button class="arrow" id="cNext" aria-label="다음"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 4l8 8-8 8"/></svg></button>
       </div>
-      <div class="rv">
-        <div class="img ph"><img src="images/together-02.jpg" alt="부산비엔날레 전시장에서 벽의 드로잉 작품을 가리키며 함께 보는 엄마와 아이들" style="object-position:50% calc(100% + 26px)"></div>
-        <div class="figcap"><span>어린이 교육 프로그램</span><span>교육신청 ›</span></div>
+      <div class="col-list" id="colTrack">
+        <a href="#" class="col-card">
+          <div class="img ph"><img src="images/col-sculpture.jpg" alt="고리 모양 틀 안에서 몸을 웅크린 인물을 표현한 청동 조각" loading="lazy"></div>
+          <div class="cat">조각</div>
+          <h4>웅크린 몸 : 균형의 순간</h4>
+          <p>휘어진 고리 안에서 몸을 둥글게 말아 쥔 인물을 청동으로 빚은 조각입니다. 푸른 녹과 붉은 표면이 어우러져, 무게와 긴장이 맞서는 한순간을 보여 줍니다.</p>
+        </a>
+        <a href="#" class="col-card">
+          <div class="img ph"><img src="images/col-painting.jpg" alt="파스텔 색 붓질 위에 손글씨와 풀잎을 그린 직물 회화" loading="lazy"></div>
+          <div class="cat">회화</div>
+          <h4>풀잎 사이의 말 : 손글씨 풍경</h4>
+          <p>부드러운 직물 위에 겹겹이 쌓은 파스텔 색 붓질과 손글씨, 풀잎 선이 어우러진 회화입니다. 일상의 말과 자연의 리듬이 하나의 풍경으로 펼쳐집니다.</p>
+        </a>
+        <a href="#" class="col-card">
+          <div class="img ph"><img src="images/col-media.jpg" alt="어두운 전시장에 나란히 선 화면 속 끝없이 갈라진 흰 대지 영상" loading="lazy"></div>
+          <div class="cat">미디어아트</div>
+          <h4>갈라진 대지 : 끝없는 지평</h4>
+          <p>어두운 전시장에 나란히 놓인 다섯 개의 화면이 하나의 지평선으로 이어지는 영상 설치입니다. 끝없이 갈라진 흰 대지가 변화하는 지구의 풍경을 떠올리게 합니다.</p>
+        </a>
+        <a href="#" class="col-card">
+          <div class="img ph"><img src="images/col-video.jpg" alt="붉은 원형 단 위의 라운지 의자와 세 개의 화면으로 이루어진 영상 설치" loading="lazy"></div>
+          <div class="cat">영상 설치</div>
+          <h4>붉은 라운지 : 기대어 보는 도시</h4>
+          <p>붉은 원형 단 위의 의자에 기대어 세 개의 화면을 바라보는 영상 설치입니다. 관람객은 편안히 누운 채 도시의 건축과 풍경이 교차하는 이야기를 마주합니다.</p>
+        </a>
+        <a href="#" class="col-card">
+          <div class="img ph"><img src="images/col-install.jpg" alt="긴 흰 바닥 위에 파란 물결 조각들이 흩어진 설치 작품" loading="lazy"></div>
+          <div class="cat">설치</div>
+          <h4>푸른 물결 : 흰 길 위의 바다</h4>
+          <p>전시장을 가로지르는 긴 흰 길 위에 파란 물결 조각들을 흩어 놓은 설치 작품입니다. 작은 동물 오브제와 함께 걸으며 바다를 건너는 듯한 감각을 전합니다.</p>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== GOODS BANNER ===================== -->
-<section class="goods ph">
-  <img src="images/store-bg.jpg" alt="뮤지엄 스토어 매장 전경">
-  <h2 class="rv">GOODS MUSEUM STORE</h2>
+<!-- ===================== BOOK ===================== -->
+<section class="sec book" id="book">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="sec-title">책그림섬 <span>children's library</span></h2>
+    </div>
+  </div>
+  <div class="book-band ph"><img src="images/library-01.jpg" alt="책그림섬 원형 천장 서가"></div>
+  <div class="book-foot">
+  <div class="wrap">
+    <div class="book-card rv">
+      <div class="img ph book-fade" aria-roledescription="carousel" aria-label="책그림섬 사진">
+        <img class="on" src="images/library-02.jpg" alt="책그림섬 노란 원형 그림책 열람 공간">
+        <img src="images/hero-05.webp" alt="원형 서가와 계단식 좌석이 있는 책그림섬 전경" loading="lazy">
+        <img src="images/book-shelf-01.webp" alt="노란 바닥 위 나무 서가에 놓인 그림책들" loading="lazy">
+        <img src="images/book-shelf-02.webp" alt="계단 서가에 꽂힌 예술 도서와 그림책" loading="lazy">
+      </div>
+      <div class="txt">
+        <h3>책그림섬 <small>children's library · 지하 1층</small></h3>
+        <p>어린이 독서 공간 ‘책그림섬’은 책과 예술 작품을 매개로 한 새로운 독서 환경을 통해 ‘나’와 ‘세상’에 대한 새로운 읽기를 시도합니다. 예술성이 뛰어난 팝업 북, 어린이를 위한 독립 출판물, 다양한 언어의 도서를 소장하고 있으며, 차별화된 내용의 도서 컬렉션과 창의적인 공간, 전시와 연계한 다양한 프로그램을 제공합니다.</p>
+        <ul class="book-meta">
+          <li><b>운영 시간</b><span>화요일–일요일 10:00–17:00 (점심시간 12:00–13:00 휴관)</span></li>
+          <li><b>이용 대상</b><span>사전 예약제로 운영 (4세 이상 어린이 대상)</span></li>
+          <li><b>이용 예약</b><span>부산광역시 통합예약시스템 (회원 가입 후 로그인)</span></li>
+        </ul>
+        <a href="#" class="more-btn">자세히 보기</a>
+      </div>
+    </div>
+  </div>
+  </div>
 </section>
 
 <!-- ===================== STORE ===================== -->
 <section class="sec store" id="store">
   <div class="wrap">
     <div class="sec-head rv">
-      <h2 class="sec-title">Museum<span> - Store</span></h2>
-      <p class="sec-sub">부산현대미술관의 감성을 담은 특별한 굿즈</p>
+      <h2 class="sec-title">뮤지엄숍 <span>museum shop</span></h2>
     </div>
-    <div class="center-btn rv"><a href="#" class="more-btn">스토어 바로가기</a></div>
   </div>
   <div class="store-wrap rv">
     <div class="store-arrows">
@@ -856,34 +831,15 @@
   </div>
 </section>
 
-<!-- ===================== NOTICE ===================== -->
-<section class="notice" id="notice">
-  <img src="images/notice-bg.webp" alt="">
-  <div class="wrap">
-    <div class="notice-box rv">
-      <h3>Notice</h3>
-      <ul>
-        <li>2024 하반기 정기 휴관 안내 <em>10.24</em></li>
-        <li>11월 어린이 교육 프로그램 참가자 모집 <em>10.18</em></li>
-        <li>미술관 주차장 이용 시간 변경 안내 <em>10.11</em></li>
-        <li>도슨트 해설 운영 일정 안내 <em>10.04</em></li>
-        <li>뮤지엄 스토어 리뉴얼 오픈 안내 <em>09.27</em></li>
-      </ul>
-      <a href="#" class="more-btn">공지 더보기</a>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== FOOTER ===================== -->
 <footer>
   <div class="wrap ft">
     <div>
       <address>
         <b>(49300) 부산광역시 사하구 낙동남로 1191 (하단동) 부산현대미술관</b><br>
-        TEL. 051-220-7400 &nbsp;|&nbsp; FAX. 051-220-7410<br>
-        화 – 일 AM 10:00 – PM 6:00 (입장마감 PM 5:30)<br>
-        1월 1일, 매주 월요일 휴관
-        <a href="#" class="mail en">info@moca.example</a>
+        TEL. 051-220-7400<br>
+        관람 시간 화요일–일요일 10:00–18:00 (전시 종료 30분 전 입장 마감)<br>
+        휴관일 월요일, 1월 1일 (월요일이 공휴일이면 그다음 날 휴관)
       </address>
       <div class="sns">
         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg></a>
@@ -897,11 +853,6 @@
       </div>
     </div>
     <div>
-      <form class="news" onsubmit="event.preventDefault();this.querySelector('button').textContent='메시지 전송 완료';">
-        <h4 class="en">Newsletter</h4>
-        <input type="email" placeholder="이메일 주소를 입력하세요" required>
-        <button type="submit">메시지 보내기</button>
-      </form>
       <div class="ft-logo">
         <img src="images/logo-footer.svg" alt="부산현대미술관 Busan Museum of Contemporary Art">
       </div>
@@ -952,45 +903,6 @@
   </svg>
 </button>
 
-<aside class="set-panel" id="setPanel" role="dialog" aria-label="화면 설정" aria-hidden="true">
-  <button class="set-close" id="setClose" type="button" aria-label="화면 설정 닫기">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
-  </button>
-  <h2>안녕하세요? 부산현대미술관입니다.</h2>
-  <p class="set-desc">아래 옵션을 조정하여 나에게 꼭 맞는 탐색 환경을 만들어 보세요.</p>
-
-  <div class="set-group">
-    <h3>글자 크기</h3>
-    <div class="set-size" id="setSize">
-      <button type="button" data-fz="1" aria-label="글자 크기 기본">가</button>
-      <button type="button" data-fz="1.1" aria-label="글자 크기 크게">가</button>
-      <button type="button" data-fz="1.2" aria-label="글자 크기 아주 크게">가</button>
-    </div>
-  </div>
-
-  <div class="set-group">
-    <h3>추천 옵션</h3>
-    <div class="set-mode" id="setMode">
-      <button type="button" data-mode=""><i style="background:#fff"></i>기본</button>
-      <button type="button" data-mode="dark"><i style="background:#111"></i>다크모드</button>
-      <button type="button" data-mode="eco"><i style="background:#3fb34f"></i>에코모드</button>
-      <button type="button" data-mode="contrast"><i style="background:linear-gradient(90deg,#000 50%,#ffe600 50%)"></i>고대비모드</button>
-    </div>
-  </div>
-
-  <div class="set-group">
-    <h3>바로가기</h3>
-    <div class="set-links">
-      <a href="#exhibition">전시</a>
-      <a href="#collection">소장품</a>
-      <a href="#events">교육/프로그램</a>
-      <a href="#store">뮤지엄숍</a>
-      <a href="#notice">공지사항</a>
-    </div>
-  </div>
-
-  <button class="set-reset" id="setReset" type="button">설정 초기화</button>
-</aside>
 
 <script>
   // header: fixed on scroll
@@ -1001,12 +913,6 @@
   addEventListener('scroll', () => {
     hd.classList.toggle('fixed', scrollY > 120);
     toTop.classList.toggle('show', scrollY > innerHeight * 0.6);
-    const bl = document.querySelector('.bleed');
-    const r = bl.getBoundingClientRect();
-    if (r.bottom > 0 && r.top < innerHeight) {
-      const t = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;
-      bl.querySelectorAll('.bl-img').forEach(p => { p.style.transform = `scale(1.1) translateY(${t * -30}px)`; });
-    }
   }, { passive: true });
 
   // hero slider
@@ -1193,51 +1099,6 @@
   }), { threshold: .12 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
-  // display settings panel: text size + display mode, remembered per browser
-  const setBtn = document.getElementById('setBtn');
-  const setPanel = document.getElementById('setPanel');
-  const sizeBtns = [...document.querySelectorAll('#setSize button')];
-  const modeBtns = [...document.querySelectorAll('#setMode button')];
-  const root = document.documentElement;
-  const store = {
-    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
-    set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
-  };
-  function openPanel(open) {
-    setPanel.classList.toggle('open', open);
-    setPanel.setAttribute('aria-hidden', String(!open));
-    setBtn.setAttribute('aria-expanded', String(open));
-    // preventScroll: the panel is still off-screen when it starts sliding in, and a normal focus would scroll the page sideways to reach it
-    if (open) document.getElementById('setClose').focus({ preventScroll: true }); else setBtn.focus({ preventScroll: true });
-  }
-  let ecoPaused = false;
-  function setSize(fz) {
-    if (!sizeBtns.some(b => b.dataset.fz === fz)) fz = '1';
-    root.style.setProperty('--fz', fz);
-    sizeBtns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.fz === fz)));
-    store.set('moca-fz', fz);
-  }
-  function setMode(mode) {
-    if (!modeBtns.some(b => b.dataset.mode === mode)) mode = '';
-    if (mode) root.dataset.mode = mode; else delete root.dataset.mode;
-    modeBtns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
-    // eco mode stops the hero slideshow; leaving it resumes only if eco was what stopped it
-    if (mode === 'eco' && !paused) { pauseBtn.click(); ecoPaused = true; }
-    else if (mode !== 'eco' && ecoPaused) { ecoPaused = false; if (paused) pauseBtn.click(); }
-    store.set('moca-mode', mode);
-  }
-  setBtn.onclick = () => openPanel(!setPanel.classList.contains('open'));
-  document.getElementById('setClose').onclick = () => openPanel(false);
-  document.getElementById('setReset').onclick = () => { setSize('1'); setMode(''); };
-  sizeBtns.forEach(b => b.onclick = () => setSize(b.dataset.fz));
-  modeBtns.forEach(b => b.onclick = () => setMode(b.dataset.mode));
-  setPanel.querySelectorAll('.set-links a').forEach(a => a.addEventListener('click', () => openPanel(false)));
-  addEventListener('keydown', e => { if (e.key === 'Escape' && setPanel.classList.contains('open')) openPanel(false); });
-  addEventListener('pointerdown', e => {
-    if (setPanel.classList.contains('open') && !setPanel.contains(e.target) && !setBtn.contains(e.target)) openPanel(false);
-  });
-  setSize(store.get('moca-fz') || '1');
-  setMode(store.get('moca-mode') || '');
 </script>
 </body>
 </html>
