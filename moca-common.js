@@ -78,6 +78,8 @@
       LINKS.map(function (l) { return l.nolink ? '<span aria-disabled="true">' + l.t + '</span>' : '<a href="' + l.h + '">' + l.t + '</a>'; }).join('') + '</div></div>' +
       '<button class="set-reset" id="setReset" type="button">설정 초기화</button>';
     body.appendChild(p);
+    /* 푸터 메뉴 중 연결 페이지가 없는 항목은 이동하지 않음 */
+    document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('.ft-menu a[data-nolink]'); if (a) e.preventDefault(); });
     buildSitemap(body);
     document.getElementById('sqAll').onclick = function () { window.mocaSitemap(true); };
   }
