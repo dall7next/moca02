@@ -50,7 +50,7 @@ body > section, body > main, body > footer{zoom:var(--fz,1)}
 
 /* ---------- 자주 찾는 페이지 바로가기 (화면 오른쪽 가장자리 고정) ---------- */
 .side-quick{position:fixed;z-index:80;right:0;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;
-  background:var(--mi-01);border-left:3px solid var(--mi-fresh);border-radius:6px 0 0 6px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.25)}
+  background:var(--mi-01);border:1px solid var(--mi-fresh);border-right:0;border-radius:6px 0 0 6px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.25)}
 .side-quick a{display:block;padding:16px 11px;color:#fff;font-size:13px;font-weight:500;line-height:1.25;letter-spacing:1px;
   writing-mode:vertical-rl;text-align:center;transition:background .2s,color .2s}
 .side-quick a + a{border-top:1px solid rgba(255,255,255,.18)}
