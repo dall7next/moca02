@@ -283,17 +283,22 @@ html[data-mode] .side-quick .sq-all{background:var(--green);color:var(--on-accen
 }
 @media (max-width:680px){.sitemap{padding:22px 20px 28px}.sm-grid{gap:24px 16px}}
 @media (prefers-reduced-motion:reduce){.sitemap,.sitemap-dim{transition:none}}
-/* ---------- 푸터: 주소·로고 / 바로가기 메뉴 / SNS·정책 3단 구성 ---------- */
-body > footer .ft{grid-template-columns:1.35fr .65fr 1fr;gap:0}
-body > footer .ft > * + *{border-left:1px solid var(--line,#e5e5e5);padding-left:56px}
-html:not([data-mode]) body > footer .ft > * + *{border-color:#262626}
-.ft-menu{display:flex;flex-direction:column;align-items:flex-start;gap:14px;font-size:14px;font-weight:700;line-height:1.5}
-.ft-menu a{color:var(--ink,#111);transition:color .2s}
-html:not([data-mode]) .ft-menu a{color:#cfcfcf}
-.ft-menu a:hover,.ft-menu a:focus-visible{color:var(--green,#39b034)}
-body > footer .ft-links{gap:8px 32px}
+/* ---------- 푸터: 주소 / MENU / POLICY / 로고·SNS 4단 구성 ---------- */
+body > footer .ft{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr) auto;gap:48px;align-items:start}
+body > footer .ft h5{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.5px;color:var(--ink,#111);margin:0 0 22px}
+body > footer .ft-menu,body > footer .ft-links{display:flex;flex-direction:column;align-items:flex-start;gap:12px;font-size:13px;line-height:1.5}
+body > footer .ft-menu a,body > footer .ft-links a{transition:color .2s}
+body > footer .ft-menu a{color:#666}
+html:not([data-mode]) body > footer .ft h5{color:#cfcfcf}
+html:not([data-mode]) body > footer .ft-menu a{color:#8c8c8c}
+body > footer .ft-menu a:hover,body > footer .ft-menu a:focus-visible{color:var(--green,#39b034)}
+body > footer .ft-brand .ft-logo{margin-top:0}
+body > footer .ft > .ft-brand .sns{margin:28px 0 0}
+body > footer .ft > .ft-brand .mail{margin-top:20px}
 @media (max-width:1024px){
-  body > footer .ft{grid-template-columns:1fr;gap:32px}
-  body > footer .ft > * + *{border-left:0;padding-left:0;border-top:1px solid var(--line,#e5e5e5);padding-top:32px}
-  .ft-menu{flex-direction:row;flex-wrap:wrap;gap:12px 32px}
+  body > footer .ft{grid-template-columns:1fr 1fr;gap:40px 24px}
+  body > footer .ft > :first-child,body > footer .ft > .ft-brand{grid-column:1/-1}
 }
+/* 중간 폭 데스크톱: 오른쪽 화면설정 버튼·캐릭터가 로고를 가리지 않도록 여백 확보 */
+@media (min-width:1025px) and (max-width:1420px){body > footer .ft{padding-right:110px}}
+@media (min-width:1025px) and (max-width:1200px){body > footer .ft{gap:28px}}
