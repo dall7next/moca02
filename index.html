@@ -261,6 +261,8 @@
   .prod b{display:block;font-size:15px;font-weight:700;color:var(--ink);margin-top:6px}
   .store-arrows{position:absolute;left:8px;right:8px;top:38%;display:flex;justify-content:space-between;pointer-events:none}
   .store-arrows .arrow{pointer-events:auto}
+  /* 상품 가격과 아래 전시장 사진 사이 여백 (기본 120px → 154px) */
+  @media (min-width:681px){#store{padding-bottom:154px}}
 
   /* ---------- notice ---------- */
   .notice{position:relative;height:650px;overflow:hidden;margin-top:0}
