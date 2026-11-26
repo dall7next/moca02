@@ -441,24 +441,31 @@
   .outline-grid li span{font-size:17px;color:var(--ink);font-weight:500}
 
   /* ---------- footer (4 columns) ---------- */
-  footer{background:#fff;border-top:1px solid var(--line);padding:80px 0 0;margin-top:150px}
-  .ft{display:grid;grid-template-columns:1.25fr 1fr 1fr 1.2fr;gap:48px}
+  /* 푸터: 메인 화면과 동일 */
+  footer{background:#fff;border-top:1px solid var(--line);padding:70px 0 0;margin-top:150px}
+  footer .wrap{max-width:1240px}
+  .ft{display:grid;grid-template-columns:1.3fr 1fr;gap:60px}
   .ft address{font-style:normal;font-size:13px;color:#666;line-height:1.9}
   .ft address b{color:var(--ink)}
-  .ft h5{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:1px;color:var(--ink);margin-bottom:16px}
-  .ft ul li{font-size:13px;color:#666;padding:4px 0}
-  .ft ul li a:hover{color:var(--ink)}
-  .sns{display:flex;gap:16px;margin-top:26px}
+  .ft .mail{display:block;font-weight:700;color:var(--ink);margin-top:10px}
+  .sns{display:flex;gap:16px;margin:26px 0}
   .sns a{width:20px;height:20px;color:#777}
   .sns a:hover{color:var(--ink)}
-  .news h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:12px}
-  .news input{width:100%;height:44px;border:1px solid #ddd;padding:0 14px;font:inherit;font-size:13px;outline:none}
-  .news input:focus{border-color:var(--green)}
-  .news button{width:100%;height:44px;margin-top:8px;background:var(--green);color:#fff;font-weight:700;font-size:13px;transition:.2s}
-  .news button:hover{background:var(--green-dark)}
-  .ft-logo{margin-top:50px}
-  .ft-logo img{width:auto;height:56px;max-width:100%;object-fit:contain}
-  .copyright{background:var(--dark);color:#888;font-size:11px;text-align:center;padding:16px 0;margin-top:70px;font-family:'Montserrat',sans-serif}
+  .ft > div:last-child .sns{margin-top:0}
+  .ft > div:last-child .mail{margin-top:24px}
+  .ft-links{display:grid;grid-template-columns:repeat(2,max-content);gap:6px 60px;font-size:12px;color:#888}
+  .ft-links a:hover{color:var(--ink)}
+  .ft-logo{display:flex;align-items:center;gap:12px;justify-content:flex-start;margin-top:48px;color:var(--ink)}
+  .ft-logo img{width:auto;height:64px;max-width:100%;object-fit:contain}
+  .copy{background:var(--dark);color:#888;font-size:11px;text-align:center;padding:16px 0;margin-top:60px;font-family:'Montserrat',sans-serif}
+  html:not([data-mode]) footer{background:#000;border-top:0}
+  html:not([data-mode]) .ft address{color:#9a9a9a}
+  html:not([data-mode]) .ft address b,html:not([data-mode]) .ft .mail{color:#cfcfcf}
+  html:not([data-mode]) .ft .sns a{color:#9a9a9a}
+  html:not([data-mode]) .ft-links{color:#8c8c8c}
+  html:not([data-mode]) .ft .sns a:hover,html:not([data-mode]) .ft-links a:hover,html:not([data-mode]) .ft .mail:hover{color:#fff}
+  html:not([data-mode]) .ft-logo img{filter:brightness(0) invert(.72)}
+  html:not([data-mode]) footer .copy{background:#000;border-top:1px solid #262626;color:#7d7d7d}
 
   /* ---------- motion for panels ---------- */
   .panel.enter .reveal{animation:exIn .9s cubic-bezier(.2,.8,.2,1) both}
@@ -493,7 +500,7 @@
     .row.rev .txt{padding-left:0}
     .row.wide .frame{margin-right:0}
     .rows{gap:90px}
-    .ft{grid-template-columns:1fr 1fr}
+    .ft{grid-template-columns:1fr}
     .outline-grid{grid-template-columns:1fr 1fr}
     .months{grid-template-columns:repeat(6,1fr)}
     .months li:nth-child(7){border-left:0}
@@ -534,8 +541,8 @@
     .to-top{right:16px;bottom:16px;width:44px;height:44px}
   }
 </style>
-<link rel="stylesheet" href="moca-common.css?v=67">
-<script src="moca-common.js?v=63" defer></script>
+<link rel="stylesheet" href="moca-common.css?v=68">
+<script src="moca-common.js?v=68" defer></script>
 <script>
   /* a transition that ends on 메인 is tagged so the CSS can keep 메인 fixed */
   addEventListener('pagereveal', function (e) {
@@ -742,40 +749,25 @@
         화 – 일 AM 10:00 – PM 6:00 (입장마감 PM 5:30)<br>
         1월 1일, 매주 월요일 휴관
       </address>
+      <div class="ft-logo">
+        <img src="images/logo-footer.svg" alt="부산현대미술관 Busan Museum of Contemporary Art">
+      </div>
+    </div>
+    <div>
       <div class="sns">
         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg></a>
         <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.8L4.3 21H1l7.7-8.8L.6 3h6.8l4.7 6.2L17.5 3zm-1.2 16h1.8L6.5 4.9H4.6L16.3 19z"/></svg></a>
         <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .6 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4.8 31 31 0 0 0-.4-4.8zM9.7 15.1V8.9L15.5 12l-5.8 3.1z"/></svg></a>
         <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
       </div>
-    </div>
-    <div>
-      <h5>EXHIBITION</h5>
-      <ul>
-        <li><a href="#current">현재 전시</a></li>
-        <li><a href="#upcoming">예정 전시</a></li>
-        <li><a href="#past">지난 전시</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>POLICY</h5>
-      <ul>
-        <li><a href="#">개인정보처리방침</a></li>
-        <li><a href="#">저작권 보호정책</a></li>
-        <li><a href="#">이메일 무단수집 거부안내</a></li>
-        <li><a href="#">미술관 SNS 소개 안내</a></li>
-      </ul>
-    </div>
-    <div>
-      <form class="news" onsubmit="event.preventDefault();this.querySelector('button').textContent='메시지 전송 완료';">
-        <h4 class="en">Newsletter</h4>
-        <input type="email" placeholder="이메일 주소를 입력하세요" required>
-        <button type="submit">메시지 보내기</button>
-      </form>
-      <div class="ft-logo"><img src="images/logo-footer.svg" alt="부산현대미술관 Busan Museum of Contemporary Art"></div>
+      <div class="ft-links">
+        <a href="#">개인정보처리방침</a><a href="#">저작권 보호정책</a>
+        <a href="#">이메일 무단수집 거부안내</a><a href="#">미술관 SNS 소개 안내</a>
+      </div>
+      <a href="#" class="mail en">info@moca.example</a>
     </div>
   </div>
-  <div class="copyright">Copyright © Busan Museum of Contemporary Art. All Rights Reserved.</div>
+  <div class="copy">Copyright © Busan Museum of Contemporary Art. All Rights Reserved.</div>
 </footer>
 
 <button class="to-top" id="toTop" type="button" aria-label="맨 위로 이동">
