@@ -133,6 +133,13 @@
   .quick a:hover .go{transform:translateX(4px)}
 
   /* ---------- exhibition ---------- */
+  #exhibition{position:relative;isolation:isolate}
+  #exhibition::before{content:"";position:absolute;inset:0;z-index:-1;background:url(images/octagon-pattern.webp) repeat center top/456px auto;opacity:.3;pointer-events:none;transition:opacity .8s ease}
+  #exhibition::after{content:"";position:absolute;inset:0;z-index:-1;background:url(images/handwriting-pattern.webp) repeat center top/940px auto;opacity:0;filter:grayscale(1);pointer-events:none;transition:opacity .8s ease}
+  #exhibition[data-slide="1"]::before{opacity:0}
+  #exhibition[data-slide="1"]::after{opacity:.5}
+  #exhibition>.wrap{background:var(--body-bg,#fff);box-shadow:0 0 160px 30px var(--body-bg,#fff)}
+  #exhibition>.wrap{padding-top:40px;padding-bottom:40px}
   .exh-body{position:relative}
   /* 전시 슬라이드: 한 번에 하나씩, 페이드로 전환 */
   .exh-slide{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:stretch}
@@ -281,6 +288,7 @@
   /* 공지·관람 안내 배경: 위·아래 검정 그라데이션으로 살짝 어둡게 */
   .notice::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.18) 28%,rgba(0,0,0,0) 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.18) 72%,rgba(0,0,0,.5) 100%)}
   .notice .wrap{z-index:1}
+  .notice-deco{position:absolute;inset:0;z-index:0;width:100%;height:100%;pointer-events:none}
   .notice-box.info li{display:grid;grid-template-columns:78px 1fr;gap:10px;line-height:1.55}
   .notice-box.info li::before{display:none}
   .notice-box.info li b{color:var(--ink);font-weight:700}
@@ -411,7 +419,7 @@
 
 
   /* ---------- AI character button ---------- */
-  .ai-btn{position:fixed;z-index:90;right:17px;bottom:102px;width:70px;height:64px;transition:transform .25s;filter:drop-shadow(0 0 1.5px rgba(255,255,255,.95)) drop-shadow(0 3px 8px rgba(0,0,0,.3))}
+  .ai-btn{position:fixed;z-index:90;right:18px;bottom:102px;width:70px;height:64px;transition:transform .25s;filter:drop-shadow(0 0 1.5px rgba(255,255,255,.95)) drop-shadow(0 3px 8px rgba(0,0,0,.3))}
   .ai-btn svg{display:block;width:100%;height:100%;overflow:visible}
   .ai-btn:hover{transform:scale(1.08)}
   .ai-btn:focus-visible{outline:2px solid var(--green);outline-offset:3px}
@@ -463,7 +471,7 @@
   });
 </script>
 </style>
-<link rel="stylesheet" href="moca-common.css?v=63">
+<link rel="stylesheet" href="moca-common.css?v=66">
 <script src="moca-common.js?v=63" defer></script>
 </head>
 <body>
@@ -650,6 +658,16 @@
 <!-- ===================== NOTICE ===================== -->
 <section class="notice" id="notice">
   <img src="images/notice-bg-02.webp" alt="부산현대미술관 복도">
+  <svg class="notice-deco" viewBox="0 0 1620 910" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <g fill="#000" fill-opacity="0.5">
+      <circle cx="447" cy="198" r="9"/><circle cx="244" cy="294" r="9"/><circle cx="744" cy="245" r="9"/>
+      <circle cx="1031" cy="290" r="9"/><circle cx="159" cy="428" r="9"/><circle cx="380" cy="419" r="9"/>
+      <circle cx="286" cy="522" r="9"/><circle cx="554" cy="605" r="9"/><circle cx="757" cy="640" r="9"/>
+      <circle cx="825" cy="614" r="9"/><circle cx="976" cy="649" r="9"/><circle cx="1152" cy="465" r="9"/>
+      <circle cx="1314" cy="509" r="9"/><circle cx="1265" cy="694" r="9"/><circle cx="1461" cy="709" r="9"/>
+    </g>
+    <image href="images/logo-mark.svg" x="711" y="400" width="197" height="108" style="filter:brightness(0)"/>
+  </svg>
   <div class="wrap">
     <div class="notice-box rv">
       <h3>공지 사항</h3>
@@ -1094,6 +1112,7 @@
       slides.forEach((s, k) => { s.classList.toggle('on', k === at); s.setAttribute('aria-hidden', k === at ? 'false' : 'true'); });
       const link = slides[at].querySelector('.exh-info h3 a');
       if (more && link) more.setAttribute('href', link.getAttribute('href'));
+      const sec = body.closest('section'); if (sec) sec.dataset.slide = at;
     };
     prev.addEventListener('click', () => show(at - 1));
     next.addEventListener('click', () => show(at + 1));
