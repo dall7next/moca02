@@ -330,6 +330,15 @@
   .tg-dots span{position:absolute;width:1.7%;aspect-ratio:1;border-radius:50%;background:var(--green);transform:translate(-50%,-50%)}
   @media (max-width:680px){.tg-dots span{width:2.6%}}
   /* ---------- reveal ---------- */
+  /* 푸터: 블랙 배경 + 그레이 톤 글자 (화면설정 색상 조합을 켠 경우에는 그 조합을 따름) */
+  html:not([data-mode]) footer{background:#000;border-top:0}
+  html:not([data-mode]) .ft address{color:#9a9a9a}
+  html:not([data-mode]) .ft address b,html:not([data-mode]) .ft .mail{color:#cfcfcf}
+  html:not([data-mode]) .ft .sns a{color:#9a9a9a}
+  html:not([data-mode]) .ft-links{color:#8c8c8c}
+  html:not([data-mode]) .ft .sns a:hover,html:not([data-mode]) .ft-links a:hover,html:not([data-mode]) .ft .mail:hover{color:#fff}
+  html:not([data-mode]) .ft-logo img{filter:brightness(0) invert(.72)}
+  html:not([data-mode]) footer .copy{background:#000;border-top:1px solid #262626;color:#7d7d7d}
   .rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
   .rv.in{opacity:1;transform:none}
 
@@ -454,8 +463,8 @@
   });
 </script>
 </style>
-<link rel="stylesheet" href="moca-common.css?v=62">
-<script src="moca-common.js?v=62" defer></script>
+<link rel="stylesheet" href="moca-common.css?v=63">
+<script src="moca-common.js?v=63" defer></script>
 </head>
 <body>
 
